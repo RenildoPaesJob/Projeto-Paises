@@ -1,5 +1,4 @@
 <?php
-
     require "config.php";
     require "dao/CaracteristicaDaoSqlServer.php";
 
@@ -12,8 +11,6 @@
     $pib         = filter_input(INPUT_POST, 'pib', FILTER_SANITIZE_NUMBER_INT);
     $tipoGoverno = strtoupper(filter_input(INPUT_POST, 'tipoGoverno', FILTER_SANITIZE_STRING));
     $dataInfo    = filter_input(INPUT_POST, 'dataInfo');
-
-    // exit;
 
     $regra = 0;
     

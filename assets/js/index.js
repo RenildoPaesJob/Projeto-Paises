@@ -14,7 +14,7 @@ $(document).ready(function() {
     // });
 
     $('#addEstado').click(function(){
-        window.location.href = "estado_adicionar.php";
+        window.location.href = "indexEstado.php";
     });
 
     $("#addCidade").click(function(){
@@ -22,7 +22,7 @@ $(document).ready(function() {
     })
     
     $('#addPais').click(function(){
-        window.location.href = "paises.php";
+        window.location.href = "indexPaises.php";
     });
     
 });

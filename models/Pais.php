@@ -87,6 +87,6 @@
         public function findById($id);
         public function findByGentilico();
         public function findByNome($nome);
-
-        
+        public function editar($idPais);
+        public function excluir($idPais);
     }

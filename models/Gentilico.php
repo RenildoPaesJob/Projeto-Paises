@@ -46,6 +46,5 @@
     public function addGentilico(Gentilico $g); 
     public function findByGentilico($nome);
     public function findByGentilicoAll();
-    // public function delete();
-    // public function consultar();
+    public function findById($id);
 }

@@ -1,25 +1,50 @@
+
 $(function () {
+
+    $("#cboPais").focus();
+
+    // carregar paises
+    $('#cboPais').change(function (e) {
+        let pais = $('#cboPais').val();
+
+        // alert(pais);
+
+        $.ajax({
+            url: 'carregar_estado.php',
+            method: 'POST',
+            data: {
+                pais: pais
+            },
+            dataType: 'JSON',
+            success: function (data) {
+
+                console.log('data: ', data);
+
+                var estado = data.map(
+                    resposta => {
+                        return `<option value="${resposta.cod_estado}">${resposta.nome}</option>`;
+                    }
+                )
+
+                $("#inputSelectEstado").html(estado);
+            }
+        })
+
+    })
+
     $('#add').click(function () {
 
-        let estado  = $("#inputSelectEstado").val();
-        let nome    = $("#inputNomeEstado").val();
-        let ibge    = $("#inputIBGE").val();
-
-        /*
-        console.log('estado: ', estado);
-        console.log('nome: ', nome);
-        console.log('uf: ', uf);
-        console.log('ibge: ', ibge);
-        console.log('ddd: ', ddd);
-        */
+        let estado = $("#inputSelectEstado").val();
+        let nome = $("#inputNomeEstado").val();
+        let ibge = $("#inputIBGE").val();
 
         $.ajax({
             url: 'cidade_add_action.php',
             method: 'POST',
             data: {
                 estado: estado,
-                nome:   nome,
-                ibge:   ibge,
+                nome: nome,
+                ibge: ibge,
             },
             dataType: 'JSON',
             success: function (data) {
@@ -27,9 +52,9 @@ $(function () {
                 console.log('data: ', data);
 
                 if (data == 1) {
-                    alert("Cidade adicionada com sucesso!!!"); 
+                    alert("Cidade adicionada com sucesso!!!");
                     window.location.href = 'index.php';
-                }else{
+                } else {
                     alert("erro! Verifique os dados!");
                 }
             }

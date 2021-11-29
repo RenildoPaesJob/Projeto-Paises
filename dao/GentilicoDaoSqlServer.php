@@ -57,4 +57,26 @@ class GentilicoDaoSqlServer implements GentilicoDao
         }
         return $array;
     }
+
+    public function findById($id)
+    {
+       // $array= [];
+        
+        $sql = $this->pdo->prepare("SELECT * FROM gentilico WHERE cod_gentilico = :cod_gentilico");
+
+        $sql->bindValue(':cod_gentilico', $id);
+        $sql->execute();
+
+        $gentilico = $sql->fetch();
+
+            $editarGentilico = new Gentilico();
+
+            $editarGentilico->setCod_gentilico($gentilico['cod_gentilico']);
+            $editarGentilico->setNome($gentilico['nome']);
+            $editarGentilico->setAtivo($gentilico['ativo']);
+
+          //  $array[] = $editarGentilico;
+
+        return $editarGentilico;
+    }
 }

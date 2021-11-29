@@ -7,11 +7,9 @@ define('DB_PASSWORD', '');
 define('DB_NAME', 'paises');
 define('DB_DRIVER', 'sqlsrv');
 
-$pdoConfig = DB_DRIVER . ":" . "Server=" . DB_HOST . ";";
-$pdoConfig .= "Database=" . DB_NAME . ";";
+$pdoConfig = DB_DRIVER . ":" . "Server=" . DB_HOST . ";" . "Database=" . DB_NAME . ";";
 
 $pdo = new PDO($pdoConfig, DB_USER, DB_PASSWORD);
 
 // $query = $pdo->query("SELECT * FROM pais");
-
 // $query->fetchAll();

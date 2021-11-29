@@ -15,7 +15,8 @@ $gentilico  = filter_input(INPUT_POST, 'gentilico');
 
 $regra = 0;
 
-if ($nome_pt && $UF  && $gentilico) {
+if ($nome && $nome_pt && $UF && $gentilico) {
+
     if ($paisDao->findByNome($nome_pt) == false) {
 
         $newPais = new Pais();
@@ -29,6 +30,7 @@ if ($nome_pt && $UF  && $gentilico) {
         $paisDao->addPais($newPais);
 
         echo $regra = 1;
+
     } else {
         echo $regra;
     }

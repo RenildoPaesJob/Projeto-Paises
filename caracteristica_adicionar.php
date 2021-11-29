@@ -6,9 +6,6 @@ require "dao/PaisDaoSqlServer.php";
 $paisDao = new PaisDaoSqlServer($pdo);
 $lista   = $paisDao->findAllPais();
 
-// echo "<pre>";
-// print_r($lista);
-// echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -47,16 +44,6 @@ $lista   = $paisDao->findAllPais();
                     alert("Escolha um Pais!");
 
                 };
-
-              
-
-                // alert(pais);
-                // alert(area);
-                // alert(populacao);
-                // alert(capital);
-                // alert(pib);
-                // alert(tipoGoverno);
-                // alert(dataInfo);
 
                 $.ajax({
                     url: 'caracteristica_add_action.php',

@@ -37,9 +37,10 @@ $(document).ready(function(){
             success: function(data){
                 console.log('data: ', data);
                 
-                // if (data == 1) {
-                //     alert("País adicionado com sucesso!");
-                // }
+                if (data == 1) {
+                    alert("País adicionado com sucesso!");
+                }
+                
             },error:function(erro){
                 console.log('erro: ', erro);
             }
@@ -48,11 +49,12 @@ $(document).ready(function(){
 
     });
 
-    $("#voltar").click(function(){
-        window.location.href = "paises.php";
+    $('#voltar').click(function(){
+        window.location.href = "indexPaises.php";
     });
 
     $('#voltarIndex').click(function(){
         window.location.href = "index.php";
     });
+
 });

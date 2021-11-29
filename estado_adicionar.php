@@ -11,6 +11,7 @@
     // print_r($lista);
     // echo "</pre>";
     // die;
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,7 +22,7 @@
     <title>Adicionar Estado</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/estado.css">
     <!-- CSS -->
     
 </head>
@@ -30,7 +31,7 @@
         <legend><strong>Adicionar Estado v2.2</strong></legend>
 
         <label for="estado">
-            <label for="estados"><strong>País</strong></label>
+            <label for="estados"><strong>País: *</strong></label>
             <select name="select" id="inputSelect">
                 <option value="0">Escolha um País</option>
                 <?php foreach ($lista as $pais):?>
@@ -40,7 +41,7 @@
         </label><br><br>
 
         <label for="nome">
-            <strong>Nome:</strong><br>
+            <strong>Nome: *</strong><br>
             <input type="text" id="inputNomeEstado" maxlength="90">
         </label><br><br>
 
@@ -56,20 +57,19 @@
 
         <label for="ddd">
             <strong>DDD:</strong><br>
-            <input type="text" name="ddd" id="inputDDD">
+            <input type="text" name="ddd" id="inputDDD" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </label><br><br>
 
         <button class="btnAdd" id="add">ADICIONAR</button>
-        <button class="btnAdd" id="voltar">VOLTAR</button>
+        <button class="btnAdd" id="voltarLista">VOLTAR</button>
 
     </fieldset>
 </body>
     <!-- START: jQuery -->
     <script src="assets/js/func_uteis.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="assets/js/jq.js"></script>
     <!-- END: jQuery -->
 
-    <script src="assets/js/estado.js"></script>
+    <script src="assets/js/addEstado.js"></script>
     
 </html>

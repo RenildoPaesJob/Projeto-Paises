@@ -85,4 +85,8 @@
         public function addEstado(Estado $e);
         public function findByName($nome, $idPais);
         public function findByEstadoAll();
+        public function findEstadoIdPais($idPais);
+        public function findById($id);
+        public function editar(Estado $idEstado);
+        public function excluir($idEstado);
     }

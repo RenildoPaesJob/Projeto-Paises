@@ -13,6 +13,8 @@
     $dataInfo    = filter_input(INPUT_POST, 'dataInfo');
 
     $regra = 0;
+
+    
     
     if ($pais && $tipoGoverno && $dataInfo) {
 

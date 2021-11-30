@@ -30,12 +30,12 @@
         <legend><strong>Adicionar País v2.2</strong></legend><br>
 
         <label for="nome">
-            <strong>Nome:</strong><br>
+            <strong>Nome: *</strong><br>
             <input type="text" id="inputNomePais" maxlength="90">
         </label><br><br>
 
         <label for="nome">
-            <strong>Nome em Português:</strong><br>
+            <strong>Nome em Português: *</strong><br>
             <input type="text" id="inputNomePaisPT" maxlength="90">
         </label><br><br>
 
@@ -50,7 +50,7 @@
         </label><br><br>
 
         <label for="pais">
-            <label for="paises"><strong>Gentílico</strong></label><br>
+            <label for="paises"><strong>Gentílico *</strong></label><br>
             <select name="select" id="inputSelect">
                 <option value="0" selected>Escolha um Gentílico!</option>
 

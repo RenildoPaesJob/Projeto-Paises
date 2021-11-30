@@ -30,6 +30,8 @@ $(function () {
             }
         })
 
+
+
     })
 
     $('#add').click(function () {
@@ -37,6 +39,11 @@ $(function () {
         let estado = $("#inputSelectEstado").val();
         let nome = $("#inputNomeEstado").val();
         let ibge = $("#inputIBGE").val();
+
+        if (estado || nome == false) {
+            alert("Preencha os campos Obrigatórios!");
+            return;
+        }
 
         $.ajax({
             url: 'cidade_add_action.php',

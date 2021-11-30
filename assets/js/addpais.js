@@ -12,6 +12,10 @@ $(document).ready(function(){
         let bacen       = $("#inputBacen").val();
         let gentilico   = $("#inputSelect").val();
 
+        if (nome || nome_pt || gentilico == false) {
+            alert("Preencha os campos Obrigatórios !")
+        }
+
         const content = {
             nome,
             nome_pt,

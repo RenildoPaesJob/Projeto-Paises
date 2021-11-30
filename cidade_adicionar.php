@@ -41,7 +41,7 @@ $listaCidade    = $cidadeDao->findAllCidade();
             <legend><strong>Adicionar Cidade v2.2</strong></legend><br>
 
             <label for="estado">
-                <label for="estados"><strong>Pais</strong></label><br>
+                <label for="estados"><strong>Pais *</strong></label><br>
                 <select name="select" id="cboPais">
                     <option value="0">Escolha um País</option>
 
@@ -52,7 +52,7 @@ $listaCidade    = $cidadeDao->findAllCidade();
             </label><br><br>
 
             <label for="estado">
-                <label for="estados"><strong>Estados</strong></label><br>
+                <label for="estados"><strong>Estados *</strong></label><br>
                 <select name="select" id="inputSelectEstado">
                     <option value="0">Escolha um Estado</option>
                     

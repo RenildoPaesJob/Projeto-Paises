@@ -30,8 +30,6 @@ $listaCidade    = $cidadeDao->findAllCidade();
     <script src="assets/js/func_uteis.js"></script>
     <script src="assets/js/jq.js"></script>
     <!-- END: jQuery -->
-
-    <script src="assets/js/cidade.js"></script>
     
 </head>
 <body>
@@ -54,7 +52,7 @@ $listaCidade    = $cidadeDao->findAllCidade();
             <label for="estado">
                 <label for="estados"><strong>Estados *</strong></label><br>
                 <select name="select" id="inputSelectEstado">
-                    <option value="0">Escolha um Estado</option>
+                    <option value="0">Escolha um País</option>
                     
                 </select>
             </label><br><br>
@@ -72,5 +70,8 @@ $listaCidade    = $cidadeDao->findAllCidade();
             <button class="btnAdd" id="add">ADICIONAR</button>
             <button class="btnAdd" id="voltar">VOLTAR</button>
     </fieldset>
+
+    <script src="assets/js/cidade.js"></script>
+
 </body>
 </html>

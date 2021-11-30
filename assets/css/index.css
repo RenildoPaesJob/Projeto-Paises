@@ -57,3 +57,7 @@ legend{
     border: solid 1px #000;
     width: 900px;
 }
+
+input{
+    border-radius: 5px;
+}

@@ -60,3 +60,7 @@ legend{
     width: 900px;
     text-align: center;
 }
+
+input{
+    border-radius: 5px;
+}

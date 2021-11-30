@@ -28,7 +28,7 @@
 </head>
 <body>
     <fieldset style="position: absolute;">
-        <legend><strong>Adicionar Estado v2.2</strong></legend>
+        <legend><strong>Adicionar Estado v2.2</strong></legend><br>
 
         <label for="estado">
             <label for="estados"><strong>País: *</strong></label>

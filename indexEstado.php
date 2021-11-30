@@ -37,7 +37,7 @@ $lista = $estadoDao->findByEstadoAll();
 
         <div class="contaner-md">
             <div class="col-2">
-                <legend><strong>Estados</strong></legend>
+                <legend><strong>Estados</strong></legend><br>
             </div>
 
             <button class="btnAdd" id="addEstado">Adicionar Estado</button>

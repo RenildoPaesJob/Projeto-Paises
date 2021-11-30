@@ -5,6 +5,7 @@ $(function () {
 
     // carregar paises
     $('#cboPais').change(function (e) {
+
         let pais = $('#cboPais').val();
 
         // alert(pais);
@@ -19,7 +20,9 @@ $(function () {
             success: function (data) {
 
                 console.log('data: ', data);
-
+                if (data.length == 0) {
+                    $("#inputSelectEstado").empty().append(`<option value="0">Escolha um País</option>`);
+                }
                 var estado = data.map(
                     resposta => {
                         return `<option value="${resposta.cod_estado}">${resposta.nome}</option>`;

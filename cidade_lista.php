@@ -23,7 +23,7 @@ $lista  = $cidadeDao->findAllCidade();
     <!-- ================END: jQuery=================== -->
 
     <!-- =================CSS========================== -->
-    <link rel="stylesheet" href="assets/css/estadoList.css">
+    <link rel="stylesheet" href="assets/css/cidadeList.css">
     <!-- =================CSS========================== -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
@@ -33,6 +33,7 @@ $lista  = $cidadeDao->findAllCidade();
 
 <body>
     <div class="contaner">
+        <Fieldset>
         <legend><strong>Cidades</strong></legend><br>
         <button class="btnAdd" id="addCidade">Adicionar Cidade</button>
         <button class="btnAdd" id="voltarIndex">Voltar</button>
@@ -55,6 +56,7 @@ $lista  = $cidadeDao->findAllCidade();
                 </tr>
             <?php endforeach; ?>
         </table>
+        </Fieldset>
     </div>
 
     <script src="assets/js/cidadeIndex.js"></script>

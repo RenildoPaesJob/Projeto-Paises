@@ -35,7 +35,7 @@ class PaisDaoSqlServer implements PaisDao
     {
         $array = [];
 
-        $sql = $this->pdo->query("SELECT * FROM pais");
+        $sql = $this->pdo->query("SELECT TOP (100) * FROM pais");
         $data = $sql->fetchAll();
 
         if (count($data) > 0) {

@@ -24,7 +24,7 @@
     <!-- ================END: jQuery=================== -->
 
     <!-- =================CSS========================== -->
-    <!-- <link rel="stylesheet" href="assets/css/estadoList.css"> -->
+    <link rel="stylesheet" href="assets/css/estado-editar.css">
     <!-- =================CSS========================== -->
 </head>
 <body>

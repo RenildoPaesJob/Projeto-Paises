@@ -48,6 +48,7 @@ $lista = $estadoDao->findByEstadoAll();
                 <tr class="cab">
                     <td>nome</td>
                     <td>UF</td>
+                    <td>IBGE</td>
                     <td>DDD</td>
                     <td>Ações</td>
                 </tr>
@@ -55,6 +56,7 @@ $lista = $estadoDao->findByEstadoAll();
                     <tr id="estado_del_<?= $data->getCodEstado(); ?>">
                         <td><?= $data->getNome() ?></td>
                         <td><?= $data->getUf() ?></td>
+                        <td><?= $data->getIbge() ?></td>
                         <td><?= $data->getDdd() ?></td>
 
                         <td><a href="estado_editar.php?id=<?= $data->getCodEstado() ?>" id="editar" class="btnAdd">Editar</a></td>

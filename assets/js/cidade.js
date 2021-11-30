@@ -70,6 +70,6 @@ $(function () {
     });
 
     $('#voltar').click(function () {
-        window.location.href = "index.php";
+        window.location.href = "cidade_lista.php";
     });
 });

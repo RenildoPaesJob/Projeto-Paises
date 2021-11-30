@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
     $("#addCidade").click(function(){
-        window.location.href = "cidade_adicionar.php";
+        window.location.href = "cidade_lista.php";
     })
     
     $('#addPais').click(function(){

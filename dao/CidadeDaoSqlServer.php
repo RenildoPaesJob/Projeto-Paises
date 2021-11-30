@@ -30,7 +30,7 @@
         {
             $array = [];
 
-            $sql    = $this->pdo->query("SELECT * FROM cidade");
+            $sql    = $this->pdo->query("SELECT TOP (50) * FROM cidade");
             $data   = $sql->fetchAll();
 
             foreach ($data as $c) {
@@ -40,7 +40,7 @@
                 $newCidade->setCodCidade($c['cod_cidade']);
                 $newCidade->setNome($c['nome']);
                 $newCidade->setIdEstado($c['id_estado']);
-                $newCidade->setIbge(['ibge']);
+                $newCidade->setIbge($c['ibge']);
 
                 $array[] = $newCidade;
             }

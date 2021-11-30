@@ -35,14 +35,25 @@ $lista = $paisDao->findTopPib($top);
 
     <!-- ============================ CSS ================================ -->
 
+    <!-- ============================ BOOTSTRAP ================================ -->
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- ============================ BOOTSTRAP ================================ -->
+
+
 </head>
 
 <body>
     <fieldset>
+        <div class="contaner">
+            <div class="col-">
+                <div class="row">
+                    <legend>Exercício País v2.2</legend><br>
+                </div>
+            </div>
+        </div>
 
-        <legend>Exercício País v2.2</legend><br>
 
         <button class="btnAdd" id="addPais">País</button>
         <button class="btnAdd" id="addEstado">Estado</button>
@@ -50,24 +61,26 @@ $lista = $paisDao->findTopPib($top);
         <button class="btnAdd" id="addCidade">Cidade</button>
         <button class="btnAdd" id="addGentilico">Gentilico</button>
         <br><br>
+        <div class="contaner">
+            <table class="table table-bordered border-primary">
 
-        <table class="table">
-
-            <tr class="cab">
-                <td >Pais</td>
-                <td>Capital</td>
-                <td>População</td>
-                <td>Pib</td>
-            </tr>
-            <?php foreach ($lista as $pais):?>
                 <tr class="cab">
-                    <td class="cab"><?= $pais->getNomePt(); ?></td>
-                    <td class="cab"><?= $pais->getCapital(); ?></td>
-                    <td class="cab"><?= $pais->getPopulacao(); ?></td>
-                    <td class="cab"><?= $pais->getPib(); ?></td>
+                    <td>Pais</td>
+                    <td>Capital</td>
+                    <td>População</td>
+                    <td>Pib</td>
                 </tr>
-            <?php endforeach; ?>
-        </table>
+                <?php foreach ($lista as $pais) : ?>
+                    <tr class="cab">
+                        <td class="cab"><?= $pais->getNomePt(); ?></td>
+                        <td class="cab"><?= $pais->getCapital(); ?></td>
+                        <td class="cab"><?= $pais->getPopulacao(); ?></td>
+                        <td class="cab"><?= $pais->getPib(); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+
     </fieldset>
 
     <!-- ========================= JAVASCRIPTS =========================== -->
@@ -77,4 +90,5 @@ $lista = $paisDao->findTopPib($top);
     <!-- ========================= JAVASCRIPTS =========================== -->
 
 </body>
+
 </html>

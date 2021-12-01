@@ -20,6 +20,7 @@ $(function () {
             success: function (data) {
 
                 console.log('data: ', data);
+
                 if (data.length == 0) {
                     $("#inputSelectEstado").empty().append(`<option value="0">Escolha um País</option>`);
                 }
@@ -32,9 +33,6 @@ $(function () {
                 $("#inputSelectEstado").html(estado);
             }
         })
-
-
-
     })
 
     $('#add').click(function () {

@@ -44,16 +44,18 @@ $lista = $estadoDao->findByEstadoAll();
             <button class="btnAdd" id="voltarIndex">Voltar</button>
             <br><br>
 
-            <table class="table">
-                <tr class="cab">
-                    <td>nome</td>
-                    <td>UF</td>
-                    <td>IBGE</td>
-                    <td>DDD</td>
-                    <td>Ações</td>
-                </tr>
+            <table class="table table-dark">
+                <thead class="cab">
+                    <tr>
+                        <th scope="col">nome</th>
+                        <th scope="col">UF</th>
+                        <th scope="col">IBGE</th>
+                        <th scope="col">DDD</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
                 <?php foreach ($lista as $data) : ?>
-                    <tr id="estado_del_<?= $data->getCodEstado(); ?>">
+                    <tbody id="estado_del_<?= $data->getCodEstado(); ?>">
                         <td><?= $data->getNome() ?></td>
                         <td><?= $data->getUf() ?></td>
                         <td><?= $data->getIbge() ?></td>
@@ -61,7 +63,7 @@ $lista = $estadoDao->findByEstadoAll();
 
                         <td><a href="estado_editar.php?id=<?= $data->getCodEstado() ?>" id="editar" class="btnAdd">Editar</a></td>
                         <td><a href="estado_excluir.php?id=<?= $data->getCodEstado() ?>" class="btnAdd" data-id-estado="<?= $data->getCodEstado(); ?>">Excluir</a></td>
-                    </tr>
+                    </tbody>
                 <?php endforeach; ?>
             </table>
         </div>

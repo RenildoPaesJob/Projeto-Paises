@@ -66,9 +66,6 @@
             $sql->execute();
             $p = $sql->fetchAll();
 
-            // print_r($p);
-            // exit;
-
             if ($sql->rowCount() > 0) {
 
                 foreach ($p as $pais) {

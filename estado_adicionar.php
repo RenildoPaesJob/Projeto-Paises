@@ -7,10 +7,6 @@
     $paisDao = new PaisDaoSqlServer($pdo);
     $estadoDao = new EstadoDaoSqlServer($pdo);
     $lista = $paisDao->findAllPais();
-    // echo "<pre>";
-    // print_r($lista);
-    // echo "</pre>";
-    // die;
     
 ?>
 <!DOCTYPE html>

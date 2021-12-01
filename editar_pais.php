@@ -8,19 +8,14 @@
     $lista = $gentilico->findById($id);
     $gent = $gentilico->findByGentilicoAll();
 
-    // echo "<pre>";
-    // print_r($lista);
-    // echo "</pre>";
-    // exit;
-
     $editarPais = new PaisDaoSqlServer($pdo);
     $id = filter_input(INPUT_GET, 'id');
 
     if ($id) {
         $pais = $editarPais->findById($id);
-        $g = $gentilico->findById($pais->getIdGentilico());
+        // $g = $gentilico->findById($pais->getIdGentilico());
         // echo "<br>";
-        // print_r($pais);
+        // print_r($g);
         // exit;
     };
 
@@ -52,11 +47,16 @@
     
     <label for="id">
         <input type="hidden" name="cod_pais" id="idPais" value="<?= $pais->getCodPais()?>">
-    </label>
+    </label><br>
 
     <label for="nome">
         <strong>Nome:</strong><br>
-        <input type="text" id="inputNome" value="<?= $pais->getNomePt()?>">
+        <input type="text" id="inputNome" value="<?= $pais->getNome()?>">
+    </label><br>
+
+    <label for="nome">
+        <strong>Nome PT:</strong><br>
+        <input type="text" id="inputNomePT" value="<?= $pais->getNomePt()?>">
     </label><br>
 
     <label for="sigla">
@@ -72,14 +72,17 @@
     <label for="gentilico">
         <strong>Gentìlico:</strong><br>
         <select name="gentilico" id="gentilico">
-            <option selected value="<?= $g->getCod_gentilico()?>"><?= $g->getNome(); ?></option>
             <?php foreach ($gent as $editarGentilico): ?>
-                <option value="<?= $editarGentilico->getCod_gentilico()?>"><?= $editarGentilico->getNome()?></option>
+                <option <?php 
+                        if ($editarGentilico->getCod_gentilico() == $pais->getIdGentilico()) {
+                           echo 'selected';
+                        }
+                    ?> value="<?= $editarGentilico->getCod_gentilico()?>"><?= $editarGentilico->getNome()?></option>
             <?php endforeach; ?>
         </select>
     </label><br><br>
 
-    <button class="btnAdd" id="save">Salva</button>
+    <button class="btnAdd" id="save">Salvar</button>
     <button class="btnAdd" id="voltarIndexPais">Voltar</button>
 
     <script src="assets/js/paisEditar.js"></script>

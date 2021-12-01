@@ -4,13 +4,9 @@
     require_once "dao/PaisDaoSqlServer.php";
     require_once "dao/GentilicoDaoSqlServer.php";
     
-
     $gentilicoDao = new GentilicoDaoSqlServer($pdo);
     $lista = $gentilicoDao->findByGentilicoAll();
-    // echo "<pre>";
-    // print_r($lista);
-    // echo "</pre>";
-    // die;
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

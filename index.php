@@ -7,10 +7,6 @@ $top = 3;
 $paisDao = new CaracteristicaDaoSqlServer($pdo);
 $lista = $paisDao->findTopPib($top);
 
-// echo "<pre>";
-// print_r($lista);
-// echo "</pre>";
-// exit;
 ?>
 
 <!DOCTYPE html>

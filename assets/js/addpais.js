@@ -12,10 +12,6 @@ $(document).ready(function(){
         let bacen       = $("#inputBacen").val();
         let gentilico   = $("#inputSelect").val();
 
-        if (nome || nome_pt || gentilico == false) {
-            alert("Preencha os campos Obrigatórios ( * )!")
-        }
-
         const content = {
             nome,
             nome_pt,
@@ -29,8 +25,6 @@ $(document).ready(function(){
             url: 'pais_add_action.php',
             method: 'POST',
             data:{
-
-                // id:       id,
                 nome:     nome,
                 nome_pt:  nome_pt,
                 UF:       UF,
@@ -43,14 +37,13 @@ $(document).ready(function(){
                 
                 if (data == 1) {
                     alert("País adicionado com sucesso!");
+                    window.location.href = "indexPaises.php";
                 }
                 
             },error:function(erro){
                 console.log('erro: ', erro);
             }
         });
-
-
     });
 
     $('#voltar').click(function(){

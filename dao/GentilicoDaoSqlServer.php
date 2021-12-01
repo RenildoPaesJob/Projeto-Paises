@@ -35,7 +35,7 @@ class GentilicoDaoSqlServer implements GentilicoDao
 
         return $sql->fetch();
     }
-    
+
     public function findByGentilicoAll()
     {
         $array = [];
@@ -47,12 +47,12 @@ class GentilicoDaoSqlServer implements GentilicoDao
 
             foreach ($g as $gent) {
 
-                $g = new Gentilico();
+                $gt = new Gentilico();
 
-                $g->setCod_gentilico($gent['cod_gentilico']);
-                $g->setNome($gent['nome']);
+                $gt->setCod_gentilico($gent['cod_gentilico']);
+                $gt->setNome($gent['nome']);
 
-                $array[] = $g;
+                $array[] = $gt;
             }
         }
         return $array;
@@ -60,8 +60,8 @@ class GentilicoDaoSqlServer implements GentilicoDao
 
     public function findById($id)
     {
-       // $array= [];
-        
+        // $array= [];
+
         $sql = $this->pdo->prepare("SELECT * FROM gentilico WHERE cod_gentilico = :cod_gentilico");
 
         $sql->bindValue(':cod_gentilico', $id);
@@ -69,13 +69,13 @@ class GentilicoDaoSqlServer implements GentilicoDao
 
         $gentilico = $sql->fetch();
 
-            $editarGentilico = new Gentilico();
+        $editarGentilico = new Gentilico();
 
-            $editarGentilico->setCod_gentilico($gentilico['cod_gentilico']);
-            $editarGentilico->setNome($gentilico['nome']);
-            $editarGentilico->setAtivo($gentilico['ativo']);
+        $editarGentilico->setCod_gentilico($gentilico['cod_gentilico']);
+        $editarGentilico->setNome($gentilico['nome']);
+        $editarGentilico->setAtivo($gentilico['ativo']);
 
-          //  $array[] = $editarGentilico;
+        //  $array[] = $editarGentilico;
 
         return $editarGentilico;
     }

@@ -6,17 +6,22 @@ $(function(){
     });
 
     //========== btn salvar - editar_pais ============
-    $('#save').click(function(){
+    $("#save").click(function(){
 
         let cod_pais    = $("#idPais").val();
-        // console.log('cod_pais: ', cod_pais);
         let nome        = $("#inputNome").val();
-        // console.log('nome: ', nome);
+        let nomePT      = $("#inputNomePT").val();
         let sigla       = $("#inputSigla").val();
-        // console.log('sigla: ', sigla);
         let bacen       = $("#inputBacen").val();
-        // console.log('bacen: ', bacen);
+        let gentilico   = $("#gentilico").val();
         
+        
+        console.log('cod_pais: ', cod_pais);
+        console.log('nome: ', nome);
+        console.log('nomePT: ', nomePT);
+        console.log('sigla: ', sigla);
+        console.log('bacen: ', bacen);
+        console.log('gentilico: ', gentilico);
 
         $.ajax({
             url: 'pais_editar_action.php',
@@ -24,22 +29,23 @@ $(function(){
             data:{
                 cod_pais: cod_pais,
                 nome: nome,
+                nomePT: nomePT,
                 sigla: sigla,
                 bacen: bacen,
+                gentilico: gentilico
             },
             dataType: 'JSON',
             success: function(editar){
                 
-                console.log('editar: ', editar);
-
                 if (editar == 1) {
+                    console.log('editar: ', editar);
                     alert("Alterado !");
                     window.location.href = "indexPaises.php";
                 }else{
                     console.error("erro!");
+                    console.log('editar: ', editar);
                 }
             }
         })
     });
-
 })

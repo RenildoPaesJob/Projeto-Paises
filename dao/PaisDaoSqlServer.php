@@ -16,8 +16,6 @@ class PaisDaoSqlServer implements PaisDao
         $campo = 'nome, nome_pt, sigla, bacen, id_gentilico';
         $keys  = ':nome, :nome_pt, :sigla, :bacen, :id_gentilico';
 
-        //$arrayName = explode(',', $keys);
-
         $sql = $this->pdo->prepare("INSERT INTO pais ($campo) values ($keys)");
 
         $sql->bindValue(':nome', $p->getNome());

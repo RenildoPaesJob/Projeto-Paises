@@ -7,6 +7,7 @@
 
     $id     = filter_input(INPUT_POST, 'cod_estado');
     $nome   = filter_input(INPUT_POST, 'nome');
+    $nomePT   = filter_input(INPUT_POST, 'nomePT');
     $uf     = filter_input(INPUT_POST, 'uf');
     $ibge   = filter_input(INPUT_POST, 'ibge');
     $ddd    = filter_input(INPUT_POST, 'ddd');

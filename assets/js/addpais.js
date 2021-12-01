@@ -13,7 +13,7 @@ $(document).ready(function(){
         let gentilico   = $("#inputSelect").val();
 
         if (nome || nome_pt || gentilico == false) {
-            alert("Preencha os campos Obrigatórios !")
+            alert("Preencha os campos Obrigatórios ( * )!")
         }
 
         const content = {

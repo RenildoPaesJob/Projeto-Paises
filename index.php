@@ -31,63 +31,61 @@ $lista = $paisDao->findTopPib($top);
 
     <!-- ============================ CSS ================================ -->
 
-    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- <link rel="stylesheet" href="assets/css/index.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- ============================ CSS ================================ -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- ============================ BOOTSTRAP ================================ -->
-
 
 </head>
 
 <body>
-    <fieldset>
-        <div class="contaner">
-            <div class="col-">
-                <div class="row">
-                    <legend>Exercício País v2.2</legend><br>
-                </div>
-            </div>
-        </div>
 
+    <div class="container-sm">
 
-        <button class="btnAdd" id="addPais">País</button>
-        <button class="btnAdd" id="addEstado">Estado</button>
-        <button class="btnAdd" id="addCaracteristica">Caracteristica</button>
-        <button class="btnAdd" id="addCidade">Cidade</button>
-        <button class="btnAdd" id="addGentilico">Gentilico</button>
-        <br><br>
-        <div class="contaner">
-            <table class="table table-bordered border-primary">
+        <div class="position-relative ">
 
-                <tr class="cab">
-                    <td>Pais</td>
-                    <td>Capital</td>
-                    <td>População</td>
-                    <td>Pib</td>
-                </tr>
+            <h3>Exercício País v2.2</h3>
+
+            <!-- primary|secondary|success|danger|warning|info|light|dark|link -->
+            <input name="Pais" id="addPais" class="btn btn-info" type="button" value="Paises">
+            <input name="Estado" id="addEstado" class="btn btn-info" type="button" value="Estados">
+            <input name="Caracteristica" id="addCaracteristica" class="btn btn-info" type="button" value="Caracteristicas">
+            <input name="Cidade" id="addCidade" class="btn btn-info" type="button" value="Cidades">
+            <input name="Gentilico" id="addGentilico" class="btn btn-info" type="button" value="Gentilico">
+
+            <table class="table table-striped">
+                <thead>
+                    <th>Pais</th>
+                    <th>Capital</th>
+                    <th>População</th>
+                    <th>Pib</th>
+                </thead>
                 <?php foreach ($lista as $pais) : ?>
-                    <tr class="cab">
-                        <td class="cab"><?= $pais->getNomePt(); ?></td>
-                        <td class="cab"><?= $pais->getCapital(); ?></td>
-                        <td class="cab"><?= $pais->getPopulacao(); ?></td>
-                        <td class="cab"><?= $pais->getPib(); ?></td>
+                    <tr>
+                        <th><?= $pais->getNomePt(); ?></th>
+                        <td><?= $pais->getCapital(); ?></td>
+                        <td><?= $pais->getPopulacao(); ?></td>
+                        <th><?= $pais->getPib(); ?></th>
                     </tr>
                 <?php endforeach; ?>
             </table>
         </div>
-
-    </fieldset>
+        
+    </div>
+    </div>
 
     <!-- ========================= JAVASCRIPTS =========================== -->
-
     <script src="assets/js/index.js"></script>
-
     <!-- ========================= JAVASCRIPTS =========================== -->
+
+    <!-- ============================ BOOTSTRAP ================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- ============================ BOOTSTRAP ================================ -->
 
 </body>
 

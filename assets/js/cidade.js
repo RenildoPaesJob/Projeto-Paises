@@ -42,7 +42,7 @@ $(function () {
         let ibge = $("#inputIBGE").val();
 
         if (estado || nome == false) {
-            alert("Preencha os campos Obrigatórios!");
+            alert("Preencha os campos Obrigatórios ( * )!");
             return;
         }
 

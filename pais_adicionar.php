@@ -1,15 +1,16 @@
 <?php
 
-    require_once "config.php";
-    require_once "dao/PaisDaoSqlServer.php";
-    require_once "dao/GentilicoDaoSqlServer.php";
-    
-    $gentilicoDao = new GentilicoDaoSqlServer($pdo);
-    $lista = $gentilicoDao->findByGentilicoAll();
-    
+require_once "config.php";
+require_once "dao/PaisDaoSqlServer.php";
+require_once "dao/GentilicoDaoSqlServer.php";
+
+$gentilicoDao = new GentilicoDaoSqlServer($pdo);
+$lista = $gentilicoDao->findByGentilicoAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,55 +18,88 @@
     <title>Adicionar País</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- <link rel="stylesheet" href="assets/css/index.css"> -->
     <!-- CSS -->
-    
-</head>
-<body>
-    <fieldset style="position: absolute;">
-        <legend><strong>Adicionar País v2.2</strong></legend><br>
+    <!-- ========================= SCRIPTS =============================== -->
 
-        <label for="nome">
-            <strong>Nome: *</strong><br>
-            <input type="text" id="inputNomePais" maxlength="90">
-        </label><br><br>
-
-        <label for="nome">
-            <strong>Nome em Português: *</strong><br>
-            <input type="text" id="inputNomePaisPT" maxlength="90">
-        </label><br><br>
-
-        <label for="uf">
-            <strong>UF:</strong><br>
-            <input type="text" name="UF" id="inputUF" maxlength="2" >
-        </label><br><br>
-
-        <label for="bacen">
-            <strong>BACEN:</strong><br>
-            <input type="text" name="ibge" id="inputBacen" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-        </label><br><br>
-
-        <label for="pais">
-            <label for="paises"><strong>Gentílico *</strong></label><br>
-            <select name="select" id="inputSelect">
-                <option value="0" selected>Escolha um Gentílico!</option>
-
-                <?php foreach ($lista as $gent): ?>
-                    <option value="<?= $gent->getCod_gentilico() ?>"><?= $gent->getNome(); ?></option>
-                <?php endforeach; ?>
-            </select>
-        </label><br><br>
-
-        <button class="btnAdd" id="add">ADICIONAR</button>
-        <button class="btnAdd" id="voltar">VOLTAR</button>
-
-    </fieldset>
-
-    <!-- START: jQuery -->
-    <script src="assets/js/func_uteis.js"></script>
     <script src="assets/js/jq.js"></script>
-    <!-- END: jQuery -->
+    <script src="assets/js/func_uteis.js"></script>
 
-    <script src="assets/js/addpais.js"></script>
+    <!-- ========================= SCRIPTS =============================== -->
+
+    <!-- ============================ CSS ================================ -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- ============================ CSS ================================ -->
+
+    <!-- ============================ BOOTSTRAP ================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!-- ============================ BOOTSTRAP ================================ -->
+
+</head>
+
+<body>
+    <div class="container-sm">
+        <div class="row ">
+            <div class="col"></div>
+            <div class="col">
+                <h3><strong>Adicionar País v2.2</strong></h3>
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <div class="col-4">
+            <label for="nome" class="form-label"><strong>Nome: *</strong></label>
+            <input class="form-control" type="text" placeholder="nome" aria-label="nome" id="inputNomePais" maxlength="90">
+        </div>
+
+        <div class="col-4">
+            <label for="nome_PT" class="form-label"><strong>Nome em Português: *</strong></label>
+            <input class="form-control" type="text" placeholder="Nome em Português" aria-label="Nome em Português" id="inputNomePaisPT" maxlength="90">
+        </div>
+        <!-- 
+        <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+        <input class="form-control" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
+        -->
+        <div class="col-4">
+            <label for="uf" class="form-label"><strong>UF:</strong></label>
+            <input class="form-control" type="text" placeholder="UF" aria-label="uf" id="inputUF" maxlength="2">
+        </div>
+
+        <div class="col-4">
+            <label for="bacen" class="form-label"><strong>Bacen:</strong></label>
+            <input class="form-control" type="text" placeholder="Bacen" aria-label="bacen" id="inputBacen" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </div>
+
+        <div class="col-4">
+            <label  for="pais">
+                <label for="paises"><strong>Gentílico *</strong></label><br>
+                <select class="form-select" name="select" id="inputSelect">
+                    <option value="0" selected>Escolha um Gentílico!</option>
+
+                    <?php foreach ($lista as $gent) : ?>
+                        <option value="<?= $gent->getCod_gentilico() ?>"><?= $gent->getNome(); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </label >
+        </div>
+        <br>
+
+            <button type="button" class="btn btn-info" id="add">ADICIONAR</button>
+            <button type="button" class="btn btn-info" id="voltar">VOLTAR</button>
+        </div>
+
+        <!-- START: jQuery -->
+        <script src="assets/js/func_uteis.js"></script>
+        <script src="assets/js/jq.js"></script>
+        <!-- END: jQuery -->
+
+        <script src="assets/js/addpais.js"></script>
+        <!-- ============================ BOOTSTRAP ================================ -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- ============================ BOOTSTRAP ================================ -->
 </body>
+
 </html>

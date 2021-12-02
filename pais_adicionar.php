@@ -17,16 +17,6 @@ $lista = $gentilicoDao->findByGentilicoAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar País</title>
 
-    <!-- CSS -->
-    <!-- <link rel="stylesheet" href="assets/css/index.css"> -->
-    <!-- CSS -->
-    <!-- ========================= SCRIPTS =============================== -->
-
-    <script src="assets/js/jq.js"></script>
-    <script src="assets/js/func_uteis.js"></script>
-
-    <!-- ========================= SCRIPTS =============================== -->
-
     <!-- ============================ CSS ================================ -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -43,21 +33,19 @@ $lista = $gentilicoDao->findByGentilicoAll();
 <body>
     <div class="container-sm">
         <div class="row ">
-            <div class="col"></div>
             <div class="col">
                 <h3><strong>Adicionar País v2.2</strong></h3>
             </div>
-            <div class="col"></div>
         </div>
 
         <div class="col-4">
             <label for="nome" class="form-label"><strong>Nome: *</strong></label>
-            <input class="form-control" type="text" placeholder="nome" aria-label="nome" id="inputNomePais" maxlength="90">
+            <input class="form-control shadow-lg p-1 mb-2 bg-body rounded" type="text" placeholder="nome" aria-label="nome" id="inputNomePais" maxlength="90">
         </div>
 
         <div class="col-4">
             <label for="nome_PT" class="form-label"><strong>Nome em Português: *</strong></label>
-            <input class="form-control" type="text" placeholder="Nome em Português" aria-label="Nome em Português" id="inputNomePaisPT" maxlength="90">
+            <input class="form-control shadow-lg p-1 mb-2 bg-body rounded" type="text" placeholder="Nome em Português" aria-label="Nome em Português" id="inputNomePaisPT" maxlength="90">
         </div>
         <!-- 
         <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
@@ -65,18 +53,18 @@ $lista = $gentilicoDao->findByGentilicoAll();
         -->
         <div class="col-4">
             <label for="uf" class="form-label"><strong>UF:</strong></label>
-            <input class="form-control" type="text" placeholder="UF" aria-label="uf" id="inputUF" maxlength="2">
+            <input class="form-control shadow-lg p-1 mb-2 bg-body rounded" type="text" placeholder="UF" aria-label="uf" id="inputUF" maxlength="2">
         </div>
 
         <div class="col-4">
             <label for="bacen" class="form-label"><strong>Bacen:</strong></label>
-            <input class="form-control" type="text" placeholder="Bacen" aria-label="bacen" id="inputBacen" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input class="form-control shadow-lg p-1 mb-2 bg-body rounded" type="text" placeholder="Bacen" aria-label="bacen" id="inputBacen" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </div>
 
         <div class="col-4">
             <label  for="pais">
                 <label for="paises"><strong>Gentílico *</strong></label><br>
-                <select class="form-select" name="select" id="inputSelect">
+                <select class="form-select shadow-lg p-1 mb-2 bg-body rounded" name="select" id="inputSelect">
                     <option value="0" selected>Escolha um Gentílico!</option>
                     <?php foreach ($lista as $gent) : ?>
                         <option value="<?= $gent->getCod_gentilico() ?>"><?= $gent->getNome(); ?></option>
@@ -93,9 +81,9 @@ $lista = $gentilicoDao->findByGentilicoAll();
         <!-- START: jQuery -->
         <script src="assets/js/func_uteis.js"></script>
         <script src="assets/js/jq.js"></script>
+        <script src="assets/js/addpais.js"></script>
         <!-- END: jQuery -->
 
-        <script src="assets/js/addpais.js"></script>
         <!-- ============================ BOOTSTRAP ================================ -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <!-- ============================ BOOTSTRAP ================================ -->

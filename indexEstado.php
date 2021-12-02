@@ -37,18 +37,15 @@ $lista = $estadoDao->findByEstadoAll();
 <body>
     <div class="container-sm">
         <div class="position-relative">
-
             <div class="row ">
-                <div class="col"></div>
                 <div class="col">
                     <h2><strong>Estados</strong></h2>
                 </div>
-                <div class="col"></div>
             </div>
 
             <button type="button" class="btn btn-info" id="addEstado">Adicionar Estado</button>
             <button type="button" class="btn btn-info" id="voltarIndex">Voltar</button>
-            <br><br>
+            <br>
 
             <table class="table table-striped table-hover">
                 <thead>

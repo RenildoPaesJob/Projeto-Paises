@@ -16,188 +16,79 @@ $lista   = $paisDao->findAllPais();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Caracteristicas</title>
 
-    <!-- START: jQuery -->
-    <script src="assets/js/func_uteis.js"></script>
-    <script src="assets/js/jq.js"></script>
-    <!-- END: jQuery -->
+    <!-- ============================ CSS ================================ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- ============================ CSS ================================ -->
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/index.css">
-    <!-- CSS -->
-
-    <!-- JAVASCRIPT -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            $("#incluir").click(function() {
-
-                let pais        = $("#inputSelect").val();
-                let area        = $("#inputArea").val();
-                let populacao   = $("#inputPopulacao").val();
-                let capital     = $("#inputCapital").val();
-                let pib         = $("#inputPib").val();
-                let tipoGoverno = $('input[name = "inputGoverno"]:checked').val();
-                let dataInfo    = $("#date").val();
-              
-                if (pais == 0) {
-
-                    alert("Escolha um Pais!");
-
-                };
-
-                $.ajax({
-                    url: 'caracteristica_add_action.php',
-                    method: 'POST',
-                    data: {
-                        pais: pais,
-                        area: area,
-                        populacao: populacao,
-                        capital: capital,
-                        pib: pib,
-                        tipoGoverno: tipoGoverno,
-                        dataInfo: dataInfo
-
-                    },
-                    dataType: 'JSON',
-                    success: function(data) {
-                        if (data == 1) {
-                            window.location.href = "index.php";
-                        }
-                    },
-                    error: function(error){
-
-                    }
-                })
-            })
-
-            $("#voltar").click(function() {
-                window.location.href = "index.php";
-            })
-
-            // inputArea >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            $("#inputArea").focus(function(e) {
-                $("#inputArea").val($("#inputArea").val().replaceAll(".", ""));
-            });
-
-            $("#inputArea").blur(function(e) {
-                let inputArea = parseInt($("#inputArea").val());
-                if (isNaN(inputArea)) {
-                    return;
-                }
-                if (inputArea != "") {
-                    console.log(inputArea);
-                    let areaFormatada = inputArea.toLocaleString('pt-BR', {
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0
-                    })
-                    $("#inputArea").val(areaFormatada);
-                }
-            });
-
-            // fim inputArea >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-            // inicio inputPopulacao >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-            $("#inputPopulacao").focus(function(e) {
-                $("#inputPopulacao").val($("#inputPopulacao").val().replaceAll(".", ""));
-            });
-
-            $("#inputPopulacao").blur(function(e) {
-                let inputPopulacao = parseInt($("#inputPopulacao").val());
-                if (isNaN(inputPopulacao)) {
-                    return;
-                }
-                if (inputPopulacao != "") {
-                    console.log(inputPopulacao);
-                    let areaFormatada = inputPopulacao.toLocaleString('pt-BR', {
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0
-                    })
-                    $("#inputPopulacao").val(areaFormatada);
-                }
-            });
-
-            // fim inputPopulacao >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-            // inicio pib >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            $("#inputPib").focus(function(e) {
-                $("#inputPib").val($("#inputPib").val().replaceAll(",", ""));
-            });
-
-            $("#inputPib").blur(function(e) {
-                let inputPib = parseInt($("#inputPib").val());
-                if (isNaN(inputPib)) {
-                    return;
-                }
-                if (inputPib != "") {
-                    console.log(inputPib);
-                    let areaFormatada = inputPib.toLocaleString('en', {
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0
-                    })
-                    $("#inputPib").val(areaFormatada);
-                }
-            });
-
-            // fim pib >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        })
-    </script>
-    <!-- JAVASCRIPT -->
+    <!-- ============================ BOOTSTRAP ================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!-- ============================ BOOTSTRAP ================================ -->
 
 </head>
 
 <body>
-
-    <fieldset style="position: absolute;" >
+    <div class="container">
 
         <h1>Adicionar Caracteristica</h1>
 
         <label for="pais">
             <label for="paises"><strong>País</strong></label>
-            <select name="select" id="inputSelect">
+            <select class="form-select shadow-lg p-1 mb-2 bg-body rounded" name="select" id="inputSelect">
                 <option value="0" selected>Escolha um País!</option>
 
                 <?php foreach ($lista as $pais) : ?>
                     <option value="<?= $pais->getCodPais() ?>"><?= $pais->getNomePt(); ?></option>
                 <?php endforeach; ?>
             </select>
-        </label><br><br>
-
-        <label for="area">
-            <strong>Área km²:</strong><br>
-            <input type="text" name="area" id="inputArea" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </label><br>
 
-        <label for="populacao">
-            <strong>População:</strong><br>
-            <input type="text" name="area" id="inputPopulacao" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-        </label><br>
+        <div class="col-4">
+            <label for="Área km²" class="form-label"><strong>Área km²</strong></label>
+            <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="Área km²" id="inputArea" aria-describedby="Área km²" placeholder="Área km²">
+        </div>
 
-        <label for="capital">
-            <strong>Capital:</strong><br>
-            <input type="text" name="capital" id="inputCapital">
-        </label><br>
+        <div class="col-4">
+            <label for="Populacao" class="form-label"><strong>População:</strong></label>
+            <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="Populacao" id="inputPopulacao" aria-describedby="Populacao" placeholder="População" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </div>
 
-        <label for="pib">
-            <strong>Pib US$:</strong><br>
-            <input type="text" name="pib" id="inputPib" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-        </label><br><br>
+        <div class="col-4">
+            <label for="capital" class="form-label">Capital:</label>
+            <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="capital" id="inputCapital" aria-describedby="capital" placeholder="Capital">
+        </div>
 
-        <label for="tipoGoverno">
-            <strong>Tipo de Governo:</strong><br>
-            <input type="radio" name="inputGoverno" value="Presidencialismo" checked>Presidencialismo</input>
-            <input type="radio" name="inputGoverno" value="Parlamentarismo">Parlamentarismo</input>
-        </label><br><br>
+        <div class="col-4">
+            <label for="pib" class="form-label"><strong>Pib US$:</strong></label>
+            <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="pib" id="inputPib" aria-describedby="pib" placeholder="PIB" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+        </div>
+        
+        <div class="form-label">
+            <strong>Tipo de Governo:</strong>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="radio" name="inputGoverno" value="Presidencialismo" checked>Presidencialismo</input><br>
+                <input class="form-check-input" type="radio" name="inputGoverno" value="Parlamentarismo" checked>Parlamentarismo</input>
+            </div>
+        </div>
 
         <label for="date">
             <strong>Data da Informação:</strong><br>
             <input type="date" name="date" id="date" value="<?= date('Y-m-d') ?>">
         </label><br><br>
 
-        <button class="btnAdd" id="incluir">INCLUIR</button>
-        <button class="btnAdd" id="voltar">VOLTAR</button>
+        <button class="btn btn-info" id="incluir">INCLUIR</button>
+        <button class="btn btn-info" id="voltar">VOLTAR</button>
+    </div>
 
-    </fieldset>
+    <!--======================= JAVASCRIPT==================== -->
+    <script src="assets/js/func_uteis.js"></script>
+    <script src="assets/js/jq.js"></script>
+    <script src="assets/js/caracteristica_adicionar.js"></script>
+    <!--======================= JAVASCRIPT==================== -->
+
+    <!-- ============================ BOOTSTRAP ================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- ============================ BOOTSTRAP ================================ -->
 </body>
 
 </html>

@@ -43,25 +43,25 @@ if ($id) {
         </label>
         <div class="col-3">
             <label for="estado" class="form-label"><strong>Estado:</strong></label>
-            <input class="form-control" type="text" aria-label="estado" id="nome" value="<?= $estado->getNome() ?>">
+            <input class="form-control shadow-lg p-1 mb-2 bg-body rounded" type="text" aria-label="estado" id="nome" value="<?= $estado->getNome() ?>">
         </div>
         <div class="col-3">
             <div class="mb-3">
                 <label for="" class="form-label"><strong>UF</strong></label>
-                <input type="text" class="form-control" name="uf" id="uf" aria-describedby="uf" placeholder="UF" value="<?= $estado->getUf() ?>">
+                <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="uf" id="uf" aria-describedby="uf" placeholder="UF" value="<?= $estado->getUf() ?>">
             </div>
         </div>
         <div class="col-3">
             <div class="mb-3">
                 <label for="ibge" class="form-label"><strong>IBGE:</strong></label>
-                <input type="text" class="form-control" name="ibge" id="ibge" aria-describedby="ibge" placeholder="IBGE" value="<?= $estado->getIbge() ?>">
+                <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="ibge" id="ibge" aria-describedby="ibge" placeholder="IBGE" value="<?= $estado->getIbge() ?>">
             </div>
         </div>
 
         <div class="col-3">
             <div class="mb-3">
               <label for="DDD" class="form-label"><strong>DDD:</strong></label>
-              <input type="text" class="form-control" name="ddd" id="DDD" aria-describedby="DDD" placeholder="DDD" value="<?= $estado->getDdd() ?>">
+              <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="ddd" id="DDD" aria-describedby="DDD" placeholder="DDD" value="<?= $estado->getDdd() ?>">
             </div>
         </div>
 

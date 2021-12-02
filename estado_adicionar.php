@@ -38,10 +38,10 @@ $lista = $paisDao->findAllPais();
             </div>
         </div>
         <br>
-        <div class="col-4">
+        <div class="col-4 shadow-lg p-1 mb-2 bg-body rounded">
             <label for="estado">
                 <label for="estados"><strong>País: *</strong></label>
-                <select name="form-select" id="inputSelect" name="select">
+                <select name="form-select " id="inputSelect" name="select">
                     <option value="0">Escolha um País</option>
                     <?php foreach ($lista as $pais) : ?>
                         <option value="<?= $pais->getCodPais(); ?>"><?= $pais->getNomePt() ?></option>
@@ -52,27 +52,28 @@ $lista = $paisDao->findAllPais();
 
         <div class="col-4">
             <label for="nome" class="form-label"><strong>Nome:</strong></label>
-            <input class="form-control" type="text" placeholder="nome" aria-label="nome" id="inputNomeEstado" maxlength="90">
+            <input class="form-control shadow-lg p-1 mb-2 bg-body rounded" type="text" placeholder="nome" aria-label="nome" id="inputNomeEstado" maxlength="90">
         </div>
 
         <div class="col-4">
             <label for="uf" class="form-label"><strong>UF:</strong></label>
-            <input class="form-control" type="text" placeholder="UF" aria-label="uf" id="inputUF" maxlength="2">
+            <input class="form-control shadow-lg p-1 mb-2 bg-body rounded" type="text" placeholder="UF" aria-label="uf" id="inputUF" maxlength="2">
         </div>
 
         <div class="col-4">
             <label for="ibge" class="form-label"><strong>IBGE:</strong></label>
-            <input type="text" class="form-control" name="ibge" id="inputIBGE" aria-describedby="ibge" placeholder="IBGE" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="ibge" id="inputIBGE" aria-describedby="ibge" placeholder="IBGE" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </div>
 
         <div class="col-4">
           <label for="ddd" class="form-label"><strong>DDD</strong></label>
-          <input type="text" class="form-control" name="ddd" id="inputDDD" aria-describedby="ddd" placeholder="DDD" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+          <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="ddd" id="inputDDD" aria-describedby="ddd" placeholder="DDD" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </div>
         <br>
 
         <button type="button" class="btn btn-info" id="add">ADICIONAR</button>
         <button type="button" class="btn btn-info" id="voltarLista">VOLTAR</button>
+
     </div>
 
 

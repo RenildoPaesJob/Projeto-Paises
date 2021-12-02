@@ -35,43 +35,45 @@ $lista = $estadoDao->findByEstadoAll();
 </head>
 
 <body>
-    <fieldset>
+    <div class="container-sm">
+        <div class="position-relative">
 
-        <div class="contaner-md">
-            <div class="col-2">
-                <legend><strong>Estados</strong></legend><br>
+            <div class="row ">
+                <div class="col"></div>
+                <div class="col">
+                    <h2><strong>Estados</strong></h2>
+                </div>
+                <div class="col"></div>
             </div>
 
-            <button class="btnAdd" id="addEstado">Adicionar Estado</button>
-            <button class="btnAdd" id="voltarIndex">Voltar</button>
+            <button type="button" class="btn btn-info" id="addEstado">Adicionar Estado</button>
+            <button type="button" class="btn btn-info" id="voltarIndex">Voltar</button>
             <br><br>
 
-            <table class="table table-dark">
-                <thead class="cab">
+            <table class="table table-striped table-hover">
+                <thead>
                     <tr>
-                        <th scope="col">nome</th>
-                        <th scope="col">UF</th>
-                        <th scope="col">IBGE</th>
-                        <th scope="col">DDD</th>
-                        <th scope="col">Ações</th>
+                        <th>nome</th>
+                        <th>UF</th>
+                        <th>IBGE</th>
+                        <th>DDD</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <?php foreach ($lista as $data) : ?>
                     <tbody id="estado_del_<?= $data->getCodEstado(); ?>">
-                        <td><?= $data->getNome() ?></td>
+                        <th><?= $data->getNome() ?></th>
                         <td><?= $data->getUf() ?></td>
                         <td><?= $data->getIbge() ?></td>
                         <td><?= $data->getDdd() ?></td>
 
-                        <td><a href="estado_editar.php?id=<?= $data->getCodEstado() ?>" id="editar" class="btnAdd">Editar</a></td>
-                        <td><a href="estado_excluir.php?id=<?= $data->getCodEstado() ?>" class="btnAdd" data-id-estado="<?= $data->getCodEstado(); ?>">Excluir</a></td>
+                        <td><a href="estado_editar.php?id=<?= $data->getCodEstado() ?>" id="editar" class="btn btn-info">Editar</a></td>
+                        <td><a href="estado_excluir.php?id=<?= $data->getCodEstado() ?>" class="btn btn-info" data-id-estado="<?= $data->getCodEstado(); ?>">Excluir</a></td>
                     </tbody>
                 <?php endforeach; ?>
             </table>
         </div>
-
-
-    </fieldset>
+    </div>
 
     <script src="assets/js/indexEstado.js"></script>
 

@@ -78,7 +78,6 @@ $lista = $gentilicoDao->findByGentilicoAll();
                 <label for="paises"><strong>Gentílico *</strong></label><br>
                 <select class="form-select" name="select" id="inputSelect">
                     <option value="0" selected>Escolha um Gentílico!</option>
-
                     <?php foreach ($lista as $gent) : ?>
                         <option value="<?= $gent->getCod_gentilico() ?>"><?= $gent->getNome(); ?></option>
                     <?php endforeach; ?>

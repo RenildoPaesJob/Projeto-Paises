@@ -41,7 +41,7 @@ $lista = $paisDao->findAllPais();
         <div class="col-4 shadow-lg p-1 mb-2 bg-body rounded">
             <label for="estado">
                 <label for="estados"><strong>País: *</strong></label>
-                <select name="form-select " id="inputSelect" name="select">
+                <select name="form-select" id="inputSelect" name="select">
                     <option value="0">Escolha um País</option>
                     <?php foreach ($lista as $pais) : ?>
                         <option value="<?= $pais->getCodPais(); ?>"><?= $pais->getNomePt() ?></option>

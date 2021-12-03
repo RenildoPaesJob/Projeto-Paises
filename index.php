@@ -3,7 +3,7 @@
 require "config.php";
 require "dao/CaracteristicaDaoSqlServer.php";
 
-$top = 3;
+$top = 4;
 $paisDao = new CaracteristicaDaoSqlServer($pdo);
 $lista = $paisDao->findTopPib($top);
 

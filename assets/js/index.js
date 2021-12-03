@@ -1,8 +1,8 @@
 
 $(document).ready(function() {
 
-    $("#addCaracteristica").click(function() {
-        window.location.href = "caracteristica_adicionar.php";
+    $('#addCaracteristica').click(function() {
+        window.location.href = "indexCaracteristicas.php";
     });
 
     $('#addGentilico').click(function(){
@@ -24,5 +24,4 @@ $(document).ready(function() {
     $('#addPais').click(function(){
         window.location.href = "indexPaises.php";
     });
-    
 });

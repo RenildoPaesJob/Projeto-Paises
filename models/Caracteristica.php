@@ -112,4 +112,6 @@
         public function add(Caracteristica $p);
         public function findDataInfo($idPais, $dataInfo);
         public function findTopPib($top);
+        public function findByAll();
+        public function findById($id);
     }

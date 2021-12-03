@@ -45,30 +45,30 @@ $lista = $paisDao->findAllPais();
 
                 <div class="col-6">
                     <!-- <div class="card"> -->
-                        <!-- <div class="card-header ui-sortable-handle"> -->
-                            <!-- <div class="card-tools"> -->
-                                <ul class="pagination pagination-sm justify-content-end">
-                                    <li class="page-item">
-                                        <a class="page-link" total-items="10" href="#">◄</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">►</a>
-                                    </li>
-                                </ul>
-                            <!-- </div> -->
-                        <!-- </div> -->
+                    <!-- <div class="card-header ui-sortable-handle"> -->
+                    <!-- <div class="card-tools"> -->
+                    <ul class="pagination pagination-sm justify-content-end">
+                        <li class="page-item">
+                            <a class="page-link" total-items="10" href="#">◄</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">►</a>
+                        </li>
+                    </ul>
+                    <!-- </div> -->
+                    <!-- </div> -->
                     <!-- </div> -->
 
                 </div>
@@ -83,18 +83,18 @@ $lista = $paisDao->findAllPais();
                     <th>Bacen</th>
                     <th>Ações</th>
                     </tr>
+                </thead>
+                <?php foreach ($lista as $data) : ?>
+                    <tr>
+                        <th id="nome"><?= $data->getNome(); ?></th>
+                        <td id="nomePt"><?= $data->getNomePt(); ?></td>
+                        <td id="sigla"><?= $data->getSigla(); ?></td>
+                        <td id="bacen"><?= $data->getBacen() ?></td>
 
-                    <?php foreach ($lista as $data) : ?>
-                        <tr>
-                            <th id="nome"><?= $data->getNome(); ?></th>
-                            <td id="nomePt"><?= $data->getNomePt(); ?></td>
-                            <td id="sigla"><?= $data->getSigla(); ?></td>
-                            <td id="bacen"><?= $data->getBacen() ?></td>
-
-                            <td><a href="editar_pais.php?id=<?= $data->getCodPais() ?>" class="btn btn-info" id="btnEditar">Editar</a></td>
-                            <td><a href="excluir_pais.php?id=<?= $data->getCodPais() ?>" class="btn btn-info" id="btnExcluir">Excluir</a></td>
-                        </tr>
-                    <?php endforeach; ?>
+                        <td><a href="editar_pais.php?id=<?= $data->getCodPais() ?>" class="btn btn-info" id="btnEditar">Editar</a></td>
+                        <td><a href="excluir_pais.php?id=<?= $data->getCodPais() ?>" class="btn btn-info" id="btnExcluir">Excluir</a></td>
+                    </tr>
+                <?php endforeach; ?>
 
             </table>
         </div>

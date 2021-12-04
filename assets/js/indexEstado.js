@@ -1,6 +1,6 @@
 $(function(){
 
-    $('#editar').click(function(e){
+    $('#btnEditar').click(function(e){
         // alert("ok");
         window.location.href = "estado_editar.php";
     });
@@ -51,4 +51,6 @@ $(function(){
     $('#voltarLista').click(function(){
         window.location.href = "indexEstado.php";
     });
+
+    
 });

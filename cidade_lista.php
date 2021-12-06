@@ -44,11 +44,11 @@ $lista  = $cidadeDao->findAllCidade();
 
             <?php foreach ($lista as $cidade) : ?>
                 <tr>
-                    <td id="nome"><?= $cidade->getNome(); ?></td>
+                    <th id="nome"><?= $cidade->getNome(); ?></th>
                     <td id="ibge"><?= $cidade->getIbge(); ?></td>
 
-                    <td><a href="cidade_editar.php?id=<?= $cidade->getCodCidade() ?>" class="btn btn-info" id="btnEditar">Editar</a></td>
-                    <td><a href="cidade_excluir.php?id=<?= $cidade->getCodCidade() ?>" class="btn btn-info" id="btnEditar">Excluir</a></td>
+                    <td><button data-cod-cidade="<?= $cidade->getCodCidade(); ?>" class="btn btn-info editar">Editar</button></td>
+                    <td><button data-cod-cidade="<?= $cidade->getCodCidade(); ?>" class="btn btn-info excluir">Excluir</button></td>
                 </tr>
             <?php endforeach; ?>
         </table>

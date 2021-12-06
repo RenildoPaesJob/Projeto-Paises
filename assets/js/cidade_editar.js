@@ -30,4 +30,8 @@ $(function(){
             }
         })
     })
+
+    $("#voltar").click(function(){
+        window.location.href = "cidade_lista.php";
+    })
 })

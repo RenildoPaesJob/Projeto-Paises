@@ -62,6 +62,6 @@
         public function findByName($nomeCidade, $idEstado);
         public function findByAllE($id);
         public function update(Cidade $cidade);
-        // public function delte($codCidade);
+        public function exluir($codCidade);
        
     }

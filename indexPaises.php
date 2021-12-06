@@ -13,15 +13,9 @@ $lista = $paisDao->findAllPais();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lista Paises</title>
-    <!-- ========================= SCRIPTS =============================== -->
 
-    <script src="assets/js/jq.js"></script>
-    <script src="assets/js/func_uteis.js"></script>
-
-    <!-- ========================= SCRIPTS =============================== -->
-
+    <!-- ============================ CSS ================================ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <!-- ============================ CSS ================================ -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
@@ -43,73 +37,43 @@ $lista = $paisDao->findAllPais();
                     <input name="voltar" id="voltarIndex" class="btn btn-info" type="button" value="Voltar">
                 </div>
 
-                <div class="col-6">
-                    <!-- <div class="card"> -->
-                    <!-- <div class="card-header ui-sortable-handle"> -->
-                    <!-- <div class="card-tools"> -->
-                    <ul class="pagination pagination-sm justify-content-end">
-                        <li class="page-item">
-                            <a class="page-link" total-items="10" href="#">◄</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">►</a>
-                        </li>
-                    </ul>
-                    <!-- </div> -->
-                    <!-- </div> -->
-                    <!-- </div> -->
+                <table class="table table-striped">
+                    <thead>
+                        <th>Nome</th>
+                        <th>Nome PT</th>
+                        <th>Siglas</th>
+                        <th>Bacen</th>
+                        <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <?php foreach ($lista as $data) : ?>
+                        <tr>
+                            <th id="nome"><?= $data->getNome(); ?></th>
+                            <td id="nomePt"><?= $data->getNomePt(); ?></td>
+                            <td id="sigla"><?= $data->getSigla(); ?></td>
+                            <td id="bacen"><?= $data->getBacen() ?></td>
 
-                </div>
+                            <td><button data-id-pais=<?= $data->getCodPais(); ?> class="btn btn-info editar">Editar</button></td>
+                            <td><button data-id-pais=<?= $data->getCodPais(); ?> class="btn btn-info excluir">Excluir</button></td>
+                        </tr>
+                    <?php endforeach; ?>
+
+                </table>
             </div>
 
 
-            <table class="table table-striped">
-                <thead>
-                    <th>Nome</th>
-                    <th>Nome PT</th>
-                    <th>Siglas</th>
-                    <th>Bacen</th>
-                    <th>Ações</th>
-                    </tr>
-                </thead>
-                <?php foreach ($lista as $data) : ?>
-                    <tr>
-                        <th id="nome"><?= $data->getNome(); ?></th>
-                        <td id="nomePt"><?= $data->getNomePt(); ?></td>
-                        <td id="sigla"><?= $data->getSigla(); ?></td>
-                        <td id="bacen"><?= $data->getBacen() ?></td>
 
-                        <td><a href="editar_pais.php?id=<?= $data->getCodPais() ?>" class="btn btn-info" id="btnEditar">Editar</a></td>
-                        <td><a href="excluir_pais.php?id=<?= $data->getCodPais() ?>" class="btn btn-info" id="btnExcluir">Excluir</a></td>
-                    </tr>
-                <?php endforeach; ?>
-
-            </table>
         </div>
 
+        <!-- ========================= SCRIPTS =============================== -->
+        <script src="assets/js/func_uteis.js"></script>
+        <script src="assets/js/jq.js"></script>
+        <script src="assets/js/addpais.js"></script>
+        <!-- ========================= SCRIPTS =============================== -->
 
-
-    </div>
-
-    <!-- ============================ BOOTSTRAP ================================ -->
-    <script src="assets/js/addpais.js"></script>
-    <!-- ============================ BOOTSTRAP ================================ -->
-
-    <!-- ============================ BOOTSTRAP ================================ -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!-- ============================ BOOTSTRAP ================================ -->
+        <!-- ============================ BOOTSTRAP ================================ -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- ============================ BOOTSTRAP ================================ -->
 </body>
 
 </html>

@@ -7,6 +7,7 @@ $EditarCidadeDao = new CidadeDaoSqlServer($pdo);
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if ($id) {
+
     $eCidade = $EditarCidadeDao->findByAllE($id);
     // echo "<pre>";
     // print_r($eCidade);

@@ -4,11 +4,14 @@ require 'dao/PaisDaoSqlServer.php';
 
 $p = new PaisDaoSqlServer($pdo);
 
-$idPais = filter_input(INPUT_GET, 'id');
+$idPais = filter_input(INPUT_POST, 'codPais');
 
-if($idPais) {
+$regra = 0;
+
+if ($idPais) {
     $p->excluir($idPais);
-}
 
-header("Location: indexPaises.php");
-exit;
+    echo $regra = 1;
+} else {
+    echo $regra;
+}

@@ -41,11 +41,6 @@ $(function () {
         let nome = $("#inputNomeEstado").val();
         let ibge = $("#inputIBGE").val();
 
-        if (estado || nome == false) {
-            alert("Preencha os campos Obrigatórios ( * )!");
-            return;
-        }
-
         $.ajax({
             url: 'cidade_add_action.php',
             method: 'POST',

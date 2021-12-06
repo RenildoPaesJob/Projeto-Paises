@@ -33,7 +33,7 @@ class PaisDaoSqlServer implements PaisDao
     {
         $array = [];
 
-        $sql = $this->pdo->query("SELECT TOP (100) * FROM pais ORDER BY cod_pais DESC");
+        $sql = $this->pdo->query("SELECT * FROM pais ORDER BY cod_pais DESC");
         $data = $sql->fetchAll();
 
         if (count($data) > 0) {
@@ -111,5 +111,7 @@ class PaisDaoSqlServer implements PaisDao
 
         $sql->bindValue(':cod_pais', $idPais);
         $sql->execute();
+
+        return;
     }
 }

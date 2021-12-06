@@ -1,9 +1,12 @@
+
 $(document).ready(function(){
 
+    //PAGINA PARA ADICIONAR UM PAIS
     $("#addPais").click(function(){
         window.location.href = "pais_adicionar.php";
     })
 
+    //PAGINA PARA INCLUIR UM PAIS
     $("#add").click(function(){
 
         let nome        = $("#inputNomePais").val();
@@ -46,17 +49,48 @@ $(document).ready(function(){
         });
     });
 
+    //BUTÃO VOLTAR PARA A LISTA DE PAISES
     $('#voltar').click(function(){
         window.location.href = "indexPaises.php";
     });
 
+    //BOTÃO PARA VOLTAR PARA INDEX
     $('#voltarIndex').click(function(){
         window.location.href = "index.php";
     });
 
-    // $("#btnExlcuir").click(function(e){
-        // console.log('e: ', e);
-    //     return confirm("tem certeza que deseja EXCLUIR");
-    // })
+    //BOTÃO PARA EDITAR UM PAIS
+    $(".editar").click(function(){
+
+        let codPais = $(this).attr('data-id-pais');
+        console.log('codPais: ', codPais);
+
+        window.location.href = 'editar_pais.php?id=' + codPais;
+    }); 
+
+    //BOTÃO PARA EXCLUIR UM PAIS DO BANCO
+    $(".excluir").click(function(){
+
+        let codPais = $(this).attr('data-id-pais');
+        console.log('codPais: ', codPais);
+
+        $.ajax({
+            url: 'excluir_pais.php',
+            method: 'POST',
+            data:{
+                codPais,
+            },
+            dataType:'JSON',
+            success: function(excluir){
+
+                console.log('excluir: ', excluir);
+
+                if (excluir == 1) {
+                    alert("Exluído !");
+                }
+
+            }
+        })
+    })
 
 });

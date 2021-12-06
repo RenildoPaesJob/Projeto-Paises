@@ -70,16 +70,16 @@ class CidadeDaoSqlServer implements CidadeDao
         $sql->bindValue(':cod_cidade', $id);
         $sql->execute();
 
-        $City = $sql->fetch();
+        $cidade = $sql->fetch();
 
-        $NewCity = new Cidade();
+        $newCidade = new Cidade();
 
-        $NewCity->setCodCidade($City['cod_cidade']);
-        $NewCity->setNome($City['nome']);
-        $NewCity->setIdEstado($City['id_estado']);
-        $NewCity->setIbge($City['ibge']);
+        $newCidade->setCodCidade($cidade['cod_cidade']);
+        $newCidade->setNome($cidade['nome']);
+        $newCidade->setIdEstado($cidade['id_estado']);
+        $newCidade->setIbge($cidade['ibge']);
 
-        return $NewCity;
+        return $newCidade;
     }
 
     public function update($cidade)
@@ -96,7 +96,13 @@ class CidadeDaoSqlServer implements CidadeDao
         return true;
     }
 
-    // public function delete($codCidade){
+    public function exluir($codCidade)
+    {
+        $sql = $this->pdo->prepare("DELETE cidade WHERE cod_cidade = :cod_cidade");
 
-    // }
+        $sql->bindValue(':cod_cidade', $codCidade);
+        $sql->execute();
+
+        return;
+    }
 }

@@ -46,10 +46,10 @@ $lista      = $caracDao->findByAll();
         <table class="table table-striped">
             <thead>
                 <th>Pais</th>
-                <th>Area</th>
+                <th>Area²</th>
                 <th>População</th>
                 <th>Capital</th>
-                <th>PIB</th>
+                <th>PIB U$</th>
                 <th>Tipo de Governo</th>
                 <th>Ações</th>
             </thead>
@@ -65,7 +65,7 @@ $lista      = $caracDao->findByAll();
                     <td><?= $caracteristica->getTipoGoverno(); ?></td>
 
                     <td><a href="caracteristica_editar.php?id=<?= $caracteristica->getCodCaracteristica(); ?>" type="button" class="btn btn-info" id="btnEditar">Editar</a></td>
-                    <td><a href="caracteristica_excluir.php?id=<?= $caracteristica->getCodCaracteristica(); ?>" type="button" class="btn btn-info" id="btnExcluir">Excluir</a></td>
+                    <td><a href="excluir_caracteristica.php?id=<?= $caracteristica->getCodCaracteristica(); ?>" type="button" class="btn btn-info" id="btnExcluir">Excluir</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>

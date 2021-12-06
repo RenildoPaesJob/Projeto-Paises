@@ -5,7 +5,7 @@ require "dao/GentilicoDaoSqlServer.php";
 
 $gentDao = new GentilicoDaoSqlServer($pdo);
 
-$nome   = strtoupper(filter_input(INPUT_POST, 'nome'));
+$nome   = strtoupper(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING));
 $status = strtoupper(filter_input(INPUT_POST, 'status'));
 
 $regra = 0;

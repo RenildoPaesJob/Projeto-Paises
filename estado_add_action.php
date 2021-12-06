@@ -5,11 +5,11 @@
     
     $estadoDao = new EstadoDaoSqlServer($pdo);
 
-    $pais   = filter_input(INPUT_POST, 'pais');
-    $nome   = filter_input(INPUT_POST, 'nome');
-    $uf     = filter_input(INPUT_POST, 'uf');
-    $ibge   = filter_input(INPUT_POST, 'ibge');
-    $ddd    = filter_input(INPUT_POST, 'ddd');
+    $pais   = filter_input(INPUT_POST, 'pais', FILTER_SANITIZE_STRING);
+    $nome   = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+    $uf     = filter_input(INPUT_POST, 'uf', FILTER_SANITIZE_STRING);
+    $ibge   = filter_input(INPUT_POST, 'ibge', FILTER_SANITIZE_NUMBER_INT);
+    $ddd    = filter_input(INPUT_POST, 'ddd', FILTER_SANITIZE_NUMBER_INT);
 
     $regra = 0;
 

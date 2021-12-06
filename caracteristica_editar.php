@@ -2,13 +2,22 @@
 require_once "config.php";
 require_once "dao/CaracteristicaDaoSqlServer.php";
 
+
 $editarCaracteristica = new CaracteristicaDaoSqlServer($pdo);
 
-$id = filter_input(INPUT_GET, 'id');
+
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if ($id) {
     $eCaracteristica = $editarCaracteristica->findById($id);
+    // echo "<pre>";
+    // var_dump($eCaracteristica);
+    // echo "</pre>";
+    // exit;    
 };
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,6 +27,7 @@ if ($id) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar | Caracteristica</title>
+
     <!-- ============================ CSS ================================ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- ============================ CSS ================================ -->
@@ -37,39 +47,62 @@ if ($id) {
 
         <div class="col-3">
             <div class="mb-3">
-                <label for="nome" class="form-label"><strong>Nome:</strong></label>
-                <input type="text" class="form-control" name="nome" id="inputNome" aria-describedby="nome">
+            <input type="hidden" name="codCaracteristica" id="codCaracterisitca" value="<?= $eCaracteristica->getCodCaracteristica() ?>">
             </div>
         </div>
 
         <div class="col-3">
             <div class="mb-3">
-                <label for="area" class="form-label"><strong>Area</strong></label>
-                <input type="text" class="form-control" name="area" id="inputArea" aria-describedby="area">
+                <label for="area" class="form-label"><strong>Area km²</strong></label>
+                <input type="text" class="form-control" name="area" id="inputArea" aria-describedby="area" value="<?= $eCaracteristica->getArea() ?>">
             </div>
         </div>
 
         <div class="col-3">
             <div class="mb-3">
-                <label for="" class="form-label"><strong>População</strong></label>
-                <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                <label for="Populacao" class="form-label"><strong>População</strong></label>
+                <input type="text" class="form-control" name="Populacao" id="inputPopulacao" aria-describedby="inputPopulacao" value="<?= $eCaracteristica->getPopulacao() ?>">
             </div>
         </div>
 
-        
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="Capital" class="form-label"><strong>Capital</strong></label>
+                <input type="text" class="form-control" name="Capital" id="inputCapital" aria-describedby="inputCapital" value="<?= $eCaracteristica->getCapital() ?>">
+            </div>
+        </div>
 
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="PIB" class="form-label"><strong>PIB U$</strong></label>
+                <input type="text" class="form-control" name="PIB" id="inputPIB" value="<?= $eCaracteristica->getPib() ?>">
+            </div>
+        </div>
 
+        <div class="col-3">
+            <div class="mb-3">
+                <label for="tipo de Governo" class="form-label"><strong>Tipo de Governo</strong></label>
+                <input type="text" class="form-control" name="tipo de Governo" id="inputTipo_governo" aria-describedby="inputPIB" value="<?= $eCaracteristica->getTipoGoverno() ?>">
+            </div>
+        </div>
+
+        <input name="btnSalvar" id="btnSalvar" class="btn btn-info" type="button" value="Salvar">
+        <input name="btnVoltar" id="btnVoltar" class="btn btn-info" type="button" value="Voltar">
 
     </div>
 
     <!-- ===============START: jQuery================== -->
-    <script src="assets/js/func_uteis.js"></script>
     <script src="assets/js/jq.js"></script>
-    <!-- ================END: jQuery=================== -->
+    <!-- ===============START: jQuery================== -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- ============================ BOOTSTRAP ================================ -->
+
+    <!-- ===============START: jQuery================== -->
+    <script src="assets/js/func_uteis.js"></script>
+    <script src="assets/js/caracteristica_editar.js"></script>
+    <!-- ================END: jQuery=================== -->
 </body>
 
 </html>

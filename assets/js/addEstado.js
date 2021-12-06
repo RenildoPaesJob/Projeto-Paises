@@ -8,11 +8,15 @@ $(function(){
         let ibge    = $("#inputIBGE").val();
         let ddd     = $("#inputDDD").val();
         
-        // const content =  {pais, nome, uf, ibge,ddd }
-        // console.log('content: ', content);
+        const content =  {pais, nome, uf, ibge,ddd }
+        console.log('content: ', content);
 
-        if (pais || nome == false) {
+        if (pais == 0  && nome == "" ) {
             alert("Preencha os Campos!");
+        }else if (nome == "") {
+            alert("Preencha os Campos!");
+        } else if (uf == "" ) {
+            alert("POW CARA TA DE SACANAGEM!!!");
         }
 
         $.ajax({
@@ -31,7 +35,8 @@ $(function(){
                 console.log('data: ', data);
 
                 if (data == 1) {
-                    window.location.href = "index.php";
+                    window.location.href = "indexEstado.php";
+                    alert("Adicionado!");
                 }else{
                     console.log("erro! Estado ja existe!");
                 }

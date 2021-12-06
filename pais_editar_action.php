@@ -5,12 +5,12 @@
     
     $paisDao    = new PaisDaoSqlServer($pdo);
 
-    $cod_pais   = filter_input(INPUT_POST, 'cod_pais');
-    $nome       = filter_input(INPUT_POST, 'nome');
-    $nomePT     = filter_input(INPUT_POST, 'nomePT');
-    $sigla      = filter_input(INPUT_POST, 'sigla');
-    $bacen      = filter_input(INPUT_POST, 'bacen');
-    $gentilico  = filter_input(INPUT_POST, 'gentilico');
+    $cod_pais   = filter_input(INPUT_POST, 'cod_pais', FILTER_SANITIZE_NUMBER_INT);
+    $nome       = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+    $nomePT     = filter_input(INPUT_POST, 'nomePT', FILTER_SANITIZE_STRING);
+    $sigla      = filter_input(INPUT_POST, 'sigla', FILTER_SANITIZE_STRING);
+    $bacen      = filter_input(INPUT_POST, 'bacen', FILTER_SANITIZE_NUMBER_INT);
+    $gentilico  = filter_input(INPUT_POST, 'gentilico', FILTER_SANITIZE_STRING);
 
     $regra = 0;
 

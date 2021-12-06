@@ -16,12 +16,12 @@ $(function(){
         let gentilico   = $("#gentilico").val();
         
         
-        console.log('cod_pais: ', cod_pais);
-        console.log('nome: ', nome);
-        console.log('nomePT: ', nomePT);
-        console.log('sigla: ', sigla);
-        console.log('bacen: ', bacen);
-        console.log('gentilico: ', gentilico);
+        // console.log('cod_pais: ', cod_pais);
+        // console.log('nome: ', nome);
+        // console.log('nomePT: ', nomePT);
+        // console.log('sigla: ', sigla);
+        // console.log('bacen: ', bacen);
+        // console.log('gentilico: ', gentilico);
 
         $.ajax({
             url: 'pais_editar_action.php',

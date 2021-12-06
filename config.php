@@ -1,7 +1,7 @@
 <?php
 
 //conexão com o banco SQL SERVER
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'SISCON-0691');
 define('DB_USER', '');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'paises');

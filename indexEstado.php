@@ -64,8 +64,8 @@ $lista = $estadoDao->findByEstadoAll();
                         <td><?= $data->getIbge() ?></td>
                         <td><?= $data->getDdd() ?></td>
 
-                        <td><a href="estado_editar.php?id=<?= $data->getCodEstado() ?>" id="editar" class="btn btn-info">Editar</a></td>
-                        <td><a href="estado_excluir.php?id=<?= $data->getCodEstado() ?>" class="btn btn-info" data-id-estado="<?= $data->getCodEstado(); ?>">Excluir</a></td>
+                        <td><a href="estado_editar.php?id=<?= $data->getCodEstado() ?>" id="btnEditar" class="btn btn-info">Editar</a></td>
+                        <td><a href="estado_excluir.php?id=<?= $data->getCodEstado() ?>" id="btnExlcuir" class="btn btn-info">Excluir</a></td>
                     </tbody>
                 <?php endforeach; ?>
             </table>

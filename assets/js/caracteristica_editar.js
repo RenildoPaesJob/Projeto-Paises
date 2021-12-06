@@ -1,51 +1,55 @@
-$(document).ready(function() {
+$(function () {
+    $("#btnSalvar").click(function () {
 
-    $("#incluir").click(function() {
+        let codCaracteristica = $("#codCaracterisitca").val();
+        console.log('codCaracteristica: ', codCaracteristica);
 
-        let pais        = $("#inputSelect").val();
-        let area        = $("#inputArea").val();
-        let populacao   = $("#inputPopulacao").val();
-        let capital     = $("#inputCapital").val();
-        let pib         = $("#inputPib").val();
-        let tipoGoverno = $('input[name = "inputGoverno"]:checked').val();
-        let dataInfo    = $("#date").val();
-      
-        if (pais == 0) {
+        let area = $("#inputArea").val();
+        console.log('area: ', area);
 
-            alert("Escolha um Pais!");
+        let populacao = $("#inputPopulacao").val();
+        console.log('populacao: ', populacao);
 
-        };
+        let capital = $("#inputCapital").val();
+        console.log('capital: ', capital);
+
+        let pib = $("#inputPIB").val();
+        console.log('pib: ', pib);
+
+        let tipo_governo = $("#inputTipo_governo").val();
+        console.log('tipo_governo: ', tipo_governo);
 
         $.ajax({
-            url: 'caracteristica_add_action.php',
+            url: "caracteristica_editar_action.php",
             method: 'POST',
             data: {
-                pais: pais,
-                area: area,
-                populacao: populacao,
-                capital: capital,
-                pib: pib,
-                tipoGoverno: tipoGoverno,
-                dataInfo: dataInfo
-
+                codCaracteristica,
+                area,
+                populacao,
+                capital,
+                pib,
+                tipo_governo
             },
             dataType: 'JSON',
-            success: function(data) {
-                if (data == 1) {
-                    alert("Caracteristica Adicionada com sucesso !");
-                    window.location.href = "indexCaracteristicas.php";
-                }
-            },
-            error: function(error){
+            success: function (editar) {
 
-            }
+                console.log('editar: ', editar);
+
+                if (editar === 1) {
+                    alert("Alterado!!");
+                    window.location.href = "indexCaracteristicas.php";
+                }else{
+                    console.log("error");
+                }
+
+            },
         })
+
     })
 
-    $("#voltar").click(function() {
+    $("#btnVoltar").click(function(){
         window.location.href = "indexCaracteristicas.php";
     })
-
     // inputArea >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     $("#inputArea").focus(function(e) {
         $("#inputArea").val($("#inputArea").val().replaceAll(".", ""));
@@ -92,24 +96,25 @@ $(document).ready(function() {
     // fim inputPopulacao >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     // inicio pib >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    $("#inputPib").focus(function(e) {
-        $("#inputPib").val($("#inputPib").val().replaceAll(",", ""));
+    $("#inputPIB").focus(function(e) {
+        $("#inputPIB").val($("#inputPIB").val().replaceAll(",", ""));
     });
 
-    $("#inputPib").blur(function(e) {
-        let inputPib = parseInt($("#inputPib").val());
-        if (isNaN(inputPib)) {
+    $("#inputPIB").blur(function(e) {
+        let inputPIB = parseInt($("#inputPIB").val());
+        if (isNaN(inputPIB)) {
             return;
         }
-        if (inputPib != "") {
-            console.log(inputPib);
-            let areaFormatada = inputPib.toLocaleString('en', {
+        if (inputPIB != "") {
+            console.log(inputPIB);
+            let areaFormatada = inputPIB.toLocaleString('en', {
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0
             })
-            $("#inputPib").val(areaFormatada);
+            $("#inputPIB").val(areaFormatada);
         }
     });
 
     // fim pib >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 })

@@ -6,4 +6,5 @@ $(function(){
     $("#voltarIndex").click(function(){
         window.location.href = "index.php";
     })
+
 })

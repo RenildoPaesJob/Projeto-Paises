@@ -114,4 +114,6 @@
         public function findTopPib($top);
         public function findByAll();
         public function findById($id);
+        public function update(Caracteristica $caracteristica);
+        public function delete($codCaracteristica);
     }

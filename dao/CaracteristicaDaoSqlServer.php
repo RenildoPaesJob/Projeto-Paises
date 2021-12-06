@@ -91,7 +91,7 @@ class CaracteristicaDaoSqlServer implements CaracteristicaDao
 
         $sql = $this->pdo->query(
             "SELECT c.cod_caracteristica ,p.nome_pt, c.area, c.populacao, 
-                c.capital, c.pib, c.tipo_governo, c.data_informacao
+                c.capital, c.pib, c.tipo_governo
                 FROM pais p
                 INNER JOIN caracteristica c
                 ON p.cod_pais = c.id_pais ORDER BY p.nome_pt DESC"
@@ -112,7 +112,6 @@ class CaracteristicaDaoSqlServer implements CaracteristicaDao
                 $c->setCapital($caracteristica['capital']);
                 $c->setPib($caracteristica['pib']);
                 $c->setTipoGoverno($caracteristica['tipo_governo']);
-                $c->setDataInfomacao(['data_informacao']);
 
                 $array[] = $c;
             }
@@ -124,8 +123,9 @@ class CaracteristicaDaoSqlServer implements CaracteristicaDao
     public function findById($id)
     {
         $sql = $this->pdo->prepare("SELECT * FROM caracteristica where cod_caracteristica = :cod_caracteristica");
+        
         $sql->bindValue(':cod_caracteristica', $id);
-        return $sql->execute();
+        $sql->execute();
         
         $caract = $sql->fetch();
 
@@ -139,5 +139,35 @@ class CaracteristicaDaoSqlServer implements CaracteristicaDao
             $caracteristica->setTipoGoverno($caract['tipo_governo']);
 
         return $caracteristica;
+    }
+
+    public function update($caracteristica)
+    {
+        // $array = [];
+        $query = "area = :area, populacao = :populacao,  capital = :capital, pib = :pib, tipo_governo = :tipo_governo";
+        $sql = $this->pdo->prepare("UPDATE caracteristica SET $query  WHERE  cod_caracteristica = :cod_caracteristica");
+       
+        $sql->bindValue(':cod_caracteristica', $caracteristica->getCodCaracteristica());
+        $sql->bindValue(':area', $caracteristica->getArea());
+        $sql->bindValue(':populacao', $caracteristica->getPopulacao());
+        $sql->bindValue(':capital', $caracteristica->getCapital());
+        $sql->bindValue(':pib', $caracteristica->getPib());
+        $sql->bindValue(':tipo_governo', $caracteristica->getTipoGoverno());
+
+    
+        $sql->execute();
+
+        return true;
+    }
+
+    public function delete($codCaracteristica)
+    {
+        $sql = $this->pdo->prepare(
+            "DELETE caracteristica WHERE cod_caracteristica = :cod_caracteristica"
+        );
+        
+        $sql->bindValue(':cod_caracteristica', $codCaracteristica);
+
+        $sql->execute();
     }
 }

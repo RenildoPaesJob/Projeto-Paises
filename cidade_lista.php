@@ -39,7 +39,7 @@ $lista  = $cidadeDao->findAllCidade();
             <thead>
                 <th>Nome</th>
                 <th>IBGE</th>
-                <th class="col-2">Ações</th>
+                <th class="col-1">Ações</th>
             </thead>
 
             <?php foreach ($lista as $cidade) : ?>

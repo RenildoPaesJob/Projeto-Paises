@@ -54,4 +54,9 @@ $(document).ready(function(){
         window.location.href = "index.php";
     });
 
+    // $("#btnExlcuir").click(function(e){
+        // console.log('e: ', e);
+    //     return confirm("tem certeza que deseja EXCLUIR");
+    // })
+
 });

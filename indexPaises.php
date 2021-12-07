@@ -24,7 +24,6 @@ $lista = $paisDao->findAllPais();
     <!-- ============================ BOOTSTRAP ================================ -->
 
 </head>
-
 <body>
     <div class="container-sm">
 

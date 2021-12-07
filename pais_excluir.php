@@ -16,4 +16,5 @@ if ($idPais) {
     
 } else {
     echo $regra;
+    
 }

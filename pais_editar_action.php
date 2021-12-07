@@ -28,6 +28,7 @@
         $paisDao->editar($pais);
 
         echo $regra = 1;
+        
     }else {
         echo $regra;
     }

@@ -30,7 +30,6 @@ if ($id) {
     <!-- ============================ BOOTSTRAP ================================ -->
 
 </head>
-
 <body>
     <div class="container-sm">
         <div class="row ">

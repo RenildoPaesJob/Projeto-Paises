@@ -12,6 +12,7 @@
     $ddd    = filter_input(INPUT_POST, 'ddd', FILTER_SANITIZE_NUMBER_INT);
 
     $regra = 0;
+    
 
     if ($pais && $nome) {
 

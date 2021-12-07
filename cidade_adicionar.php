@@ -37,6 +37,7 @@ $listaCidade    = $cidadeDao->findAllCidade();
                 <h2><strong>Adicionar Cidade v2.2</strong></h2>
             </div>
         </div>
+        
 
         <div class="col-2 p-1 mb-2 bg-body rounded">
             <label for="estado">

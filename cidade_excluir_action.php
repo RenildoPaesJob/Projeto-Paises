@@ -6,6 +6,7 @@ $cidade = new CidadeDaoSqlServer($pdo);
 
 $id = filter_input(INPUT_POST, 'codCidade', FILTER_SANITIZE_NUMBER_INT);
 
+
 $regra = 0;
 
 if ($id) {

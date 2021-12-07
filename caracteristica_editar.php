@@ -16,8 +16,6 @@ if ($id) {
     // exit;    
 };
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

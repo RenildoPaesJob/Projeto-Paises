@@ -30,6 +30,7 @@ if ($nome && $nome_pt && $UF && $gentilico) {
         $paisDao->addPais($newPais);
 
         echo $regra = 1;
+        
     } else {
         echo $regra;
     }

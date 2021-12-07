@@ -13,6 +13,7 @@ if ($codCarac) {
 
     $c->delete($codCarac);
     echo $regra = 1;
+    
 } else {
     echo $regra;
 }

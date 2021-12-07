@@ -71,7 +71,6 @@ $lista = $paisDao->findAllPais();
 
         <button type="button" class="btn btn-info" id="add">ADICIONAR</button>
         <button type="button" class="btn btn-info" id="voltarLista">VOLTAR</button>
-
     </div>
 
 

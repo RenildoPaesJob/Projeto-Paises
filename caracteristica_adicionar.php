@@ -28,7 +28,7 @@ $lista   = $paisDao->findAllPais();
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-sm">
 
         <h1>Adicionar Caracteristica</h1>
 

@@ -29,7 +29,6 @@ $lista = $gentilicoDao->findByGentilicoAll();
     <!-- ============================ BOOTSTRAP ================================ -->
 
 </head>
-
 <body>
     <div class="container-sm">
         <div class="row ">

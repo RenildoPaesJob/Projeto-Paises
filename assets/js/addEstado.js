@@ -8,6 +8,7 @@ $(function(){
         let ibge    = $("#inputIBGE").val();
         let ddd     = $("#inputDDD").val();
         
+        
         const content =  {pais, nome, uf, ibge,ddd }
         console.log('content: ', content);
 

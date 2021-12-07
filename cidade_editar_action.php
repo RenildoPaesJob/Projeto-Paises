@@ -11,6 +11,7 @@ $ibge      = strtoupper(filter_input(INPUT_POST, 'ibge', FILTER_SANITIZE_NUMBER_
 
 $regra = 0;
 
+
 if ($codCidade && $nome && $ibge) {
 
     $eCidade = new Cidade();

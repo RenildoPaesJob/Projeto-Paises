@@ -18,7 +18,6 @@ if ($id) {
     // print_r($g);
     // exit;
 };
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

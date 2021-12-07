@@ -14,6 +14,7 @@
 
     $regra = 0;
     
+    
     if ($pais && $tipoGoverno && $dataInfo) {
 
         if (DateTime::createFromFormat('Y-m-d', $dataInfo) == true) {//validação da data do dia atual com a data da informação no banco

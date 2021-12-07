@@ -28,7 +28,6 @@ $lista = $paisDao->findTopPib($top);
     <!-- ============================ BOOTSTRAP ================================ -->
 
 </head>
-
 <body>
 
     <div class="container-sm">

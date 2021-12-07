@@ -65,7 +65,6 @@ if ($id) {
         <input name="save" id="save" class="btn btn-info" type="button" value="Salvar">
         <input name="voltar" id="voltar" class="btn btn-info" type="button" value="Voltar">
 
-
     </div>
 
     <!-- ===============START: jQuery================== -->

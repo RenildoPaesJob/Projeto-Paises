@@ -13,6 +13,7 @@ if ($codEstado) {
     $e->excluir($codEstado);
 
     echo $regra = 1;
+    
 } else {
     echo $regra;
 }

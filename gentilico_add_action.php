@@ -27,5 +27,6 @@ if ($nome && $status) {
     }
 
 }else{
+    
     echo $regra;
 }

@@ -9,7 +9,4 @@
     if($idPais) {
         $e->excluir($idPais);
     }
-
-    header("Location: indexEstado.php");
-    exit;
 ?>

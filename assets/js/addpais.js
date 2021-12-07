@@ -1,4 +1,4 @@
-
+//COMPLETO...
 $(document).ready(function(){
 
     //PAGINA PARA ADICIONAR UM PAIS
@@ -87,6 +87,9 @@ $(document).ready(function(){
 
                 if (excluir == 1) {
                     alert("Exluído !");
+                    return;
+                }else{
+                    console.error('FAIL');
                 }
 
             }

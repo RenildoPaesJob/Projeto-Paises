@@ -15,15 +15,8 @@ $lista = $estadoDao->findByEstadoAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Estado</title>
 
-    <!-- ===============START: jQuery================== -->
-    <script src="assets/js/func_uteis.js"></script>
-    <script src="assets/js/jq.js"></script>
-    <!-- ================END: jQuery=================== -->
-
     <!-- ============================ CSS ================================ -->
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <!-- ============================ CSS ================================ -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
@@ -64,18 +57,23 @@ $lista = $estadoDao->findByEstadoAll();
                         <td><?= $data->getIbge() ?></td>
                         <td><?= $data->getDdd() ?></td>
 
-                        <td><a href="estado_editar.php?id=<?= $data->getCodEstado() ?>" id="btnEditar" class="btn btn-info">Editar</a></td>
-                        <td><a href="estado_excluir.php?id=<?= $data->getCodEstado() ?>" id="btnExlcuir" class="btn btn-info">Excluir</a></td>
+                        <td><button data-id-codEstado=<?= $data->getCodEstado(); ?> class="btn btn-info editar">Editar</button></td>
+                        <td><button data-id-codEstado=<?= $data->getCodEstado(); ?> class="btn btn-info excluir">Excluir</button></td>
                     </tbody>
                 <?php endforeach; ?>
             </table>
         </div>
     </div>
 
+    <!-- ===============START: jQuery================== -->
+    <script src="assets/js/func_uteis.js"></script>
+    <script src="assets/js/jq.js"></script>
     <script src="assets/js/indexEstado.js"></script>
-
+    <!-- ================END: jQuery=================== -->
+    
     <!-- ============================ BOOTSTRAP ================================ -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- ============================ BOOTSTRAP ================================ -->
 </body>
 

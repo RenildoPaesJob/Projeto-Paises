@@ -1,15 +1,11 @@
 $(function(){
 
-    $('#btnEditar').click(function(e){
-        // alert("ok");
-        window.location.href = "estado_editar.php";
-    });
-
+    //BOTÃO PARA REDIRECIONAR PARA A PAGINA DE ADICIONAR
     $("#addEstado").click(function(){
         window.location.href = "estado_adicionar.php";
     });
 
-
+    //ADICIONANDO UM NOVO ESTADO
     $("#addEstado").click(function(){
          
         let pais    = $("#inputSelect").val();
@@ -43,6 +39,45 @@ $(function(){
             }
         })
     });
+
+    //BOTÃO DE EDITAR UM ESTADO
+    $(".editar").click(function(){
+        
+        let codEstado = $(this).attr('data-id-codEstado');
+        console.log('codEstado: ', codEstado);
+
+        window.location.href = "estado_editar.php?id=" + codEstado;
+
+    })
+
+    //BOTÃO EXCLUIR UM ESTADO
+    $(".excluir").click(function(){
+        
+        let codEstado = $(this).attr('data-id-codEstado');
+        console.log('codEstado: ', codEstado);
+
+        $.ajax({
+            url: 'estado_excluir_action.php',
+            method: 'POST',
+            data:{
+                codPais
+            },
+            dataType: 'JSON',
+            success: function(excluir){
+                
+                console.log('excluir: ', excluir);
+
+                if (excluir == 1) {
+                    alert("excluído!!");
+                    return;
+                }else{
+                    console.error('FAIL');
+                }
+
+            }
+        })
+
+    })
 
     $('#voltarIndex').click(function(){
         window.location.href = "index.php";

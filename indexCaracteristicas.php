@@ -46,7 +46,7 @@ $lista      = $caracDao->findByAll();
         <table class="table table-striped">
             <thead>
                 <th>Pais</th>
-                <th>Area²</th>
+                <th>Area km²</th>
                 <th>População</th>
                 <th>Capital</th>
                 <th>PIB U$</th>

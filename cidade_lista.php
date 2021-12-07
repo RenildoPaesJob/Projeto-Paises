@@ -28,7 +28,7 @@ $lista  = $cidadeDao->findAllCidade();
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-sm">
 
         <h2><strong>Cidades</strong></h2>
         <button class="btn btn-info" id="addCidade">Adicionar Cidade</button>

@@ -65,7 +65,7 @@ $(document).ready(function(){
         let codPais = $(this).attr('data-id-pais');
         console.log('codPais: ', codPais);
 
-        window.location.href = 'editar_pais.php?id=' + codPais;
+        window.location.href = 'pais_editar.php?id=' + codPais;
     }); 
 
     //BOTÃO PARA EXCLUIR UM PAIS DO BANCO
@@ -75,10 +75,10 @@ $(document).ready(function(){
         console.log('codPais: ', codPais);
 
         $.ajax({
-            url: 'excluir_pais.php',
+            url: 'pais_excluir.php',
             method: 'POST',
             data:{
-                codPais,
+                codPais
             },
             dataType:'JSON',
             success: function(excluir){
@@ -87,6 +87,7 @@ $(document).ready(function(){
 
                 if (excluir == 1) {
                     alert("Exluído !");
+                    window.location.href = "indexPaises.php";
                     return;
                 }else{
                     console.error('FAIL');

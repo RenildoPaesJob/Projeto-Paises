@@ -60,7 +60,7 @@ $(function(){
             url: 'estado_excluir_action.php',
             method: 'POST',
             data:{
-                codPais
+                codEstado
             },
             dataType: 'JSON',
             success: function(excluir){
@@ -69,7 +69,7 @@ $(function(){
 
                 if (excluir == 1) {
                     alert("excluído!!");
-                    return;
+                    window.location.href = "indexEstado.php";
                 }else{
                     console.error('FAIL');
                 }

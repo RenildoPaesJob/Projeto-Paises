@@ -1,12 +1,18 @@
 <?php
-    require_once 'config.php';
-    require_once 'dao/EstadoDaoSqlServer.php';
+require_once 'config.php';
+require_once 'dao/EstadoDaoSqlServer.php';
 
-    $e = new EstadoDaoSqlServer($pdo);
+$e = new EstadoDaoSqlServer($pdo);
 
-    $idPais = filter_input(INPUT_GET, 'id');
+$codEstado = filter_input(INPUT_POST, 'codEstado', FILTER_SANITIZE_NUMBER_INT);
 
-    if($idPais) {
-        $e->excluir($idPais);
-    }
-?>
+$regra = 0;
+
+if ($codEstado) {
+
+    $e->excluir($codEstado);
+
+    echo $regra = 1;
+} else {
+    echo $regra;
+}

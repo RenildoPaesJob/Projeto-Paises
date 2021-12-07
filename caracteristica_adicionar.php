@@ -67,7 +67,7 @@ $lista   = $paisDao->findAllPais();
             <strong>Tipo de Governo:</strong>
             <div class="form-check form-switch">
                 <input class="form-check-input" type="radio" name="inputGoverno" value="Presidencialismo" checked>Presidencialismo</input><br>
-                <input class="form-check-input" type="radio" name="inputGoverno" value="Parlamentarismo" checked>Parlamentarismo</input>
+                <input class="form-check-input" type="radio" name="inputGoverno" value="Parlamentarismo">Parlamentarismo</input>
             </div>
         </div>
 

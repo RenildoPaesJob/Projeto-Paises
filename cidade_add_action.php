@@ -5,8 +5,8 @@ require_once "dao/CidadeDaoSqlServer.php";
 
 $cidadeDao = new CidadeDaoSqlServer($pdo);
 
-$estado = filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_STRING);
-$nome   = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+$estado = strtoupper(filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_STRING));
+$nome   = strtoupper(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING));
 $ibge   = filter_input(INPUT_POST, 'ibge', FILTER_SANITIZE_NUMBER_INT);
 
 

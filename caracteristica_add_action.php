@@ -13,8 +13,6 @@
     $dataInfo    = filter_input(INPUT_POST, 'dataInfo');
 
     $regra = 0;
-
-    
     
     if ($pais && $tipoGoverno && $dataInfo) {
 
@@ -24,8 +22,8 @@
     
                 if ($paisDao->findDataInfo($pais, $dataInfo) == false) {//pegando o select do metodo FINDDATAINFO da class CaracteristicaDaoSqlServer.php
                     
-    
                     $newCarac = new Caracteristica();
+
                     $newCarac->setIdPais($pais);
                     $newCarac->setArea($area);
                     $newCarac->setPopulacao($populacao);
@@ -40,12 +38,15 @@
                     exit;
                 } else {
                     echo $regra = 0;
+                    exit;
                 }
             }else{
                 echo $regra = 0;
+                exit;
             }
         }else{
             echo $regra = 0;
+            exit;
         }
     }
     echo $regra = 0;

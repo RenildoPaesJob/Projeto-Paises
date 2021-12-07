@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
     $('#addCaracteristica').click(function() {
-        window.location.href = "indexCaracteristicas.php";
+        window.location.href = "indexCaracteristica.php";
     });
 
     $('#addGentilico').click(function(){

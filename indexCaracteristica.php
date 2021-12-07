@@ -20,8 +20,6 @@ $lista      = $caracDao->findByAll();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lista Características</title>
 
-
-
     <!-- ============================ CSS ================================ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- ============================ CSS ================================ -->
@@ -56,7 +54,6 @@ $lista      = $caracDao->findByAll();
 
             <?php foreach ($lista as $caracteristica) : ?>
                 <tr>
-
                     <th><?= $caracteristica->getNome(); ?></th>
                     <td><?= $caracteristica->getArea(); ?></td>
                     <td><?= $caracteristica->getPopulacao(); ?></td>
@@ -64,8 +61,8 @@ $lista      = $caracDao->findByAll();
                     <td><?= $caracteristica->getPib(); ?></td>
                     <td><?= $caracteristica->getTipoGoverno(); ?></td>
 
-                    <td><a href="caracteristica_editar.php?id=<?= $caracteristica->getCodCaracteristica(); ?>" type="button" class="btn btn-info" id="btnEditar">Editar</a></td>
-                    <td><a href="excluir_caracteristica.php?id=<?= $caracteristica->getCodCaracteristica(); ?>" type="button" class="btn btn-info" id="btnExcluir">Excluir</a></td>
+                    <td><button data-cod-caracteristica="<?= $caracteristica->getCodCaracteristica(); ?>" type="button" class="btn btn-info editar">Editar</a></td>
+                    <td><button data-cod-caracteristica="<?= $caracteristica->getCodCaracteristica(); ?>" type="button" class="btn btn-info excluir">Excluir</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>

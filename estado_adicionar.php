@@ -19,9 +19,7 @@ $lista = $paisDao->findAllPais();
     <title>Adicionar Estado</title>
 
     <!-- ============================ CSS ================================ -->
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <!-- ============================ CSS ================================ -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
@@ -38,7 +36,7 @@ $lista = $paisDao->findAllPais();
             </div>
         </div>
         <br>
-        <div class="col-4 shadow-lg p-1 mb-2 bg-body rounded">
+        <div class="col-4 p-1 mb-2 bg-body rounded">
             <label for="estado">
                 <label for="estados"><strong>País: *</strong></label>
                 <select name="form-select" id="inputSelect" name="select">
@@ -66,8 +64,8 @@ $lista = $paisDao->findAllPais();
         </div>
 
         <div class="col-4">
-          <label for="ddd" class="form-label"><strong>DDD</strong></label>
-          <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="ddd" id="inputDDD" aria-describedby="ddd" placeholder="DDD" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <label for="ddd" class="form-label"><strong>DDD</strong></label>
+            <input type="text" class="form-control shadow-lg p-1 mb-2 bg-body rounded" name="ddd" id="inputDDD" aria-describedby="ddd" placeholder="DDD" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </div>
         <br>
 

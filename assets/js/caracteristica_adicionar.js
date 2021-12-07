@@ -20,30 +20,30 @@ $(document).ready(function() {
             url: 'caracteristica_add_action.php',
             method: 'POST',
             data: {
-                pais: pais,
-                area: area,
-                populacao: populacao,
-                capital: capital,
-                pib: pib,
-                tipoGoverno: tipoGoverno,
-                dataInfo: dataInfo
+                pais,
+                area,
+                populacao,
+                capital,
+                pib,
+                tipoGoverno,
+                dataInfo
 
             },
             dataType: 'JSON',
             success: function(data) {
                 if (data == 1) {
                     alert("Caracteristica Adicionada com sucesso !");
-                    window.location.href = "indexCaracteristicas.php";
+                    window.location.href = "indexCaracteristica.php";
                 }
             },
             error: function(error){
-
+                console.log('error: ', error);
             }
         })
     })
 
     $("#voltar").click(function() {
-        window.location.href = "indexCaracteristicas.php";
+        window.location.href = "indexCaracteristica.php";
     })
 
     // inputArea >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -65,11 +65,9 @@ $(document).ready(function() {
             $("#inputArea").val(areaFormatada);
         }
     });
-
     // fim inputArea >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     // inicio inputPopulacao >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
     $("#inputPopulacao").focus(function(e) {
         $("#inputPopulacao").val($("#inputPopulacao").val().replaceAll(".", ""));
     });
@@ -88,7 +86,6 @@ $(document).ready(function() {
             $("#inputPopulacao").val(areaFormatada);
         }
     });
-
     // fim inputPopulacao >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     // inicio pib >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -110,6 +107,5 @@ $(document).ready(function() {
             $("#inputPib").val(areaFormatada);
         }
     });
-
     // fim pib >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 })

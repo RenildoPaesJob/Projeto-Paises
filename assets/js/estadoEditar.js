@@ -22,7 +22,7 @@ $(function(){
         
 
         $.ajax({
-            url: 'editar_action_estado.php',
+            url: 'estado_editar_action.php',
             method: 'POST',
             data:{
                 cod_estado: cod_estado,

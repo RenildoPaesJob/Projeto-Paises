@@ -3,7 +3,7 @@
 require "config.php";
 require "dao/CaracteristicaDaoSqlServer.php";
 
-$top = 4;
+$top = 3;
 $paisDao = new CaracteristicaDaoSqlServer($pdo);
 $lista = $paisDao->findTopPib($top);
 
@@ -18,17 +18,8 @@ $lista = $paisDao->findTopPib($top);
 
     <title>Exercício Pais v2.2</title>
 
-    <!-- ========================= SCRIPTS =============================== -->
-
-    <script src="assets/js/jq.js"></script>
-    <script src="assets/js/func_uteis.js"></script>
-
-    <!-- ========================= SCRIPTS =============================== -->
-
     <!-- ============================ CSS ================================ -->
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <!-- ============================ CSS ================================ -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
@@ -47,11 +38,11 @@ $lista = $paisDao->findTopPib($top);
             <h3>Exercício País v2.2</h3>
 
             <!-- primary|secondary|success|danger|warning|info|light|dark|link -->
-            <input name="Pais" id="addPais" class="btn btn-info" type="button" value="Paises">
-            <input name="Estado" id="addEstado" class="btn btn-info" type="button" value="Estados">
-            <input name="Caracteristica" id="addCaracteristica" class="btn btn-info" type="button" value="Caracteristicas">
-            <input name="Cidade" id="addCidade" class="btn btn-info" type="button" value="Cidades">
-            <input name="Gentilico" id="addGentilico" class="btn btn-info" type="button" value="Gentilico">
+            <button name="Pais" id="addPais" class="btn btn-info" type="button">País</button>
+            <button name="Estado" id="addEstado" class="btn btn-info" type="button">Estados</button>
+            <button name="Caracteristica" id="addCaracteristica" class="btn btn-info" type="button">Caracteristicas</button>
+            <button name="Cidade" id="addCidade" class="btn btn-info" type="button">Cidades</button>
+            <button name="Gentilico" id="addGentilico" class="btn btn-info" type="button">Gentílicos</button>
 
             <table class="table table-striped">
                 <thead>
@@ -74,9 +65,11 @@ $lista = $paisDao->findTopPib($top);
     </div>
     </div>
 
-    <!-- ========================= JAVASCRIPTS =========================== -->
+    <!-- ========================= SCRIPTS =============================== -->
+    <script src="assets/js/jq.js"></script>
+    <script src="assets/js/func_uteis.js"></script>
     <script src="assets/js/index.js"></script>
-    <!-- ========================= JAVASCRIPTS =========================== -->
+    <!-- ========================= SCRIPTS =============================== -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

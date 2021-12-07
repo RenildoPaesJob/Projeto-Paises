@@ -37,7 +37,7 @@ $(function () {
 
                 if (editar === 1) {
                     alert("Alterado!!");
-                    window.location.href = "indexCaracteristicas.php";
+                    window.location.href = "indexCaracteristica.php";
                 }else{
                     console.log("error");
                 }

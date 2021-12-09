@@ -45,6 +45,8 @@
  interface GentilicoDao{
     public function addGentilico(Gentilico $g); 
     public function findByGentilico($nome);
+    public function update(Gentilico $gentilico);
     public function findByGentilicoAll();
     public function findById($id);
+    public function delete($codGentilico);
 }

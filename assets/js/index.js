@@ -6,7 +6,7 @@ $(document).ready(function() {
     });
 
     $('#addGentilico').click(function(){
-        window.location.href = "gentilico_adicionar.php";
+        window.location.href = "indexGentilico.php";
     });
     
     // $('#addPais').click(function(){

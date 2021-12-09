@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $('#voltar').click(function(){
-        window.location.href = "index.php";
+        window.location.href = "indexGentilico.php";
     });
     
     $('#add').click(function(){
@@ -22,7 +22,7 @@ $(document).ready(function(){
             success: function(data){
                 if (data == 1) {
                     alert("Gentilico Adicionado!!!")
-                    window.location.href = "index.php";
+                    window.location.href = "indexGentilico.php";
                 }else{
                     alert("erro!");
                 }

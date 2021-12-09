@@ -29,7 +29,7 @@ class GentilicoDaoSqlServer implements GentilicoDao
 
     public function findByGentilico($nome)
     {
-        $sql = $this->pdo->prepare("SELECT * FROM gentilico where nome=:nome");
+        $sql = $this->pdo->prepare("SELECT * FROM gentilico WHERE nome=:nome");
         $sql->bindValue(':nome', $nome);
         $sql->execute();
 
@@ -60,7 +60,6 @@ class GentilicoDaoSqlServer implements GentilicoDao
 
     public function findById($id)
     {
-        // $array= [];
 
         $sql = $this->pdo->prepare("SELECT * FROM gentilico WHERE cod_gentilico = :cod_gentilico");
 
@@ -75,8 +74,28 @@ class GentilicoDaoSqlServer implements GentilicoDao
         $editarGentilico->setNome($gentilico['nome']);
         $editarGentilico->setAtivo($gentilico['ativo']);
 
-        //  $array[] = $editarGentilico;
-
         return $editarGentilico;
     }
+
+    public function update($gentilico)
+    {
+        $sql = $this->pdo->prepare("UPDATE gentilico SET nome = :nome, ativo = :ativo WHERE cod_gentilico = :cod_gentilico");
+        $sql->bindValue(':cod_gentilico', $gentilico->getCod_gentilico());
+        $sql->bindValue(':nome', $gentilico->getNome());
+        $sql->bindValue(':ativo', $gentilico->getAtivo());
+
+        $sql->execute();
+        return true;
+    }
+
+    public function delete($codGentilico)
+    {
+        $sql = $this->pdo->prepare("DELETE gentilico WHERE cod_gentilico = :cod_gentilico");
+        $sql->bindValue(':cod_gentilico', $codGentilico);
+
+        $sql->execute();
+        return;
+    }
+
+
 }

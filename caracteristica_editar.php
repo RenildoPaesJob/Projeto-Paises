@@ -5,7 +5,6 @@ require_once "dao/CaracteristicaDaoSqlServer.php";
 
 $editarCaracteristica = new CaracteristicaDaoSqlServer($pdo);
 
-
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if ($id) {
@@ -37,70 +36,57 @@ if ($id) {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-sm">
 
-        <div class="col">
+        <div class="col-sm">
             <h2>Editar Caracteristica</h2>
         </div>
 
-        <div class="col-3">
-            <div class="mb-3">
-            <input type="hidden" name="codCaracteristica" id="codCaracterisitca" value="<?= $eCaracteristica->getCodCaracteristica() ?>">
-            </div>
+        <div class="col-sm">
+            <input type="hidden" name="codCaracteristica" id="codCaracterisitca" value="<?= $eCaracteristica->getCodCaracteristica(); ?>">
         </div>
 
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="area" class="form-label"><strong>Area km²</strong></label>
-                <input type="text" class="form-control" name="area" id="inputArea" aria-describedby="area" value="<?= $eCaracteristica->getArea() ?>">
-            </div>
+        <div class="col-sm">
+            <label for="area" class="form-label"><strong>Area km²</strong></label>
+            <input type="text" class="form-control" name="area" id="inputArea" aria-describedby="area" value="<?= $eCaracteristica->getArea() ?>">
         </div>
 
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="Populacao" class="form-label"><strong>População</strong></label>
-                <input type="text" class="form-control" name="Populacao" id="inputPopulacao" aria-describedby="inputPopulacao" value="<?= $eCaracteristica->getPopulacao() ?>">
-            </div>
+        <div class="col-sm">
+            <label for="Populacao" class="form-label"><strong>População</strong></label>
+            <input type="text" class="form-control" name="Populacao" id="inputPopulacao" aria-describedby="inputPopulacao" value="<?= $eCaracteristica->getPopulacao() ?>">
         </div>
 
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="Capital" class="form-label"><strong>Capital</strong></label>
-                <input type="text" class="form-control" name="Capital" id="inputCapital" aria-describedby="inputCapital" value="<?= $eCaracteristica->getCapital() ?>">
-            </div>
+        <div class="col-sm">
+            <label for="Capital" class="form-label"><strong>Capital</strong></label>
+            <input type="text" class="form-control" name="Capital" id="inputCapital" aria-describedby="inputCapital" value="<?= $eCaracteristica->getCapital() ?>">
         </div>
 
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="PIB" class="form-label"><strong>PIB U$</strong></label>
-                <input type="text" class="form-control" name="PIB" id="inputPIB" value="<?= $eCaracteristica->getPib() ?>">
-            </div>
+        <div class="col-sm">
+            <label for="PIB" class="form-label"><strong>PIB U$</strong></label>
+            <input type="text" class="form-control" name="PIB" id="inputPIB" value="<?= $eCaracteristica->getPib() ?>">
         </div>
 
-        <div class="col-3">
-            <div class="mb-3">
-                <label for="tipo de Governo" class="form-label"><strong>Tipo de Governo</strong></label>
-                <input type="text" class="form-control" name="tipo de Governo" id="inputTipo_governo" aria-describedby="inputPIB" value="<?= $eCaracteristica->getTipoGoverno() ?>">
+        <div class="form-label">
+            <strong>Tipo de Governo:</strong>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="radio" name="inputGoverno" value="Presidencialismo" checked>Presidencialismo</input><br>
+                <input class="form-check-input" type="radio" name="inputGoverno" value="Parlamentarismo">Parlamentarismo</input>
             </div>
+
+            <input name="btnSalvar" id="btnSalvar" class="btn btn-info" type="button" value="Salvar">
+            <input name="btnVoltar" id="btnVoltar" class="btn btn-info" type="button" value="Voltar">
+
         </div>
-
-        <input name="btnSalvar" id="btnSalvar" class="btn btn-info" type="button" value="Salvar">
-        <input name="btnVoltar" id="btnVoltar" class="btn btn-info" type="button" value="Voltar">
-
     </div>
-
     <!-- ===============START: jQuery================== -->
     <script src="assets/js/jq.js"></script>
+    <script src="assets/js/func_uteis.js"></script>
+    <script src="assets/js/caracteristica_editar.js"></script>
     <!-- ===============START: jQuery================== -->
 
     <!-- ============================ BOOTSTRAP ================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- ============================ BOOTSTRAP ================================ -->
-
-    <!-- ===============START: jQuery================== -->
-    <script src="assets/js/func_uteis.js"></script>
-    <script src="assets/js/caracteristica_editar.js"></script>
-    <!-- ================END: jQuery=================== -->
 </body>
 
 </html>

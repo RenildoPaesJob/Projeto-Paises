@@ -16,8 +16,8 @@ $(function () {
         let pib = $("#inputPIB").val();
         console.log('pib: ', pib);
 
-        let tipo_governo = $("#inputTipo_governo").val();
-        console.log('tipo_governo: ', tipo_governo);
+        let tipoGoverno = $('input[name = "inputGoverno"]:checked').val();
+        console.log('tipoGoverno: ', tipoGoverno);
 
         $.ajax({
             url: "caracteristica_editar_action.php",
@@ -28,7 +28,7 @@ $(function () {
                 populacao,
                 capital,
                 pib,
-                tipo_governo
+                tipoGoverno
             },
             dataType: 'JSON',
             success: function (editar) {
@@ -48,7 +48,7 @@ $(function () {
     })
 
     $("#btnVoltar").click(function(){
-        window.location.href = "indexCaracteristicas.php";
+        window.location.href = "indexCaracteristica.php";
     })
     // inputArea >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     $("#inputArea").focus(function(e) {

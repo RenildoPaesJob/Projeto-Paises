@@ -5,6 +5,7 @@ require "dao/CaracteristicaDaoSqlServer.php";
 
 $top = 3;
 $paisDao = new CaracteristicaDaoSqlServer($pdo);
+
 $lista = $paisDao->findTopPib($top);
 
 ?>
